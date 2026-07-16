@@ -1,0 +1,291 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PlaceholderImage from "../components/PlaceholderImage.astro";
+import IconMark from "../components/IconMark.astro";
+
+const whyPoints = [
+  {
+    title: "Minder stof",
+    description: "Een propere computer blijft koeler, stiller en heeft minder kans op problemen.",
+    icon: "sparkles",
+  },
+  {
+    title: "Meer snelheid",
+    description: "Je computer start sneller op en programma's werken opnieuw vlot en stabiel.",
+    icon: "bolt",
+  },
+  {
+    title: "Betere beveiliging",
+    description: "Updates en beveiliging zorgen ervoor dat je gegevens en privacy beschermd blijven.",
+    icon: "shield",
+  },
+  {
+    title: "Langere levensduur",
+    description: "Regelmatig onderhoud verlengt de levensduur van je computer en voorkomt dure herstellingen.",
+    icon: "clock",
+  },
+];
+
+const steps = [
+  {
+    n: 1,
+    title: "Volledige diagnose",
+    description: "Ik controleer de algemene gezondheid van je computer.",
+    bullets: ["SSD / HDD", "RAM Geheugen", "Temperaturen", "Ventilatoren", "Windows & Drivers"],
+  },
+  {
+    n: 2,
+    title: "Interne reiniging",
+    description: "Ik verwijder stof uit ventilatoren, koelblokken, voeding en behuizing.",
+  },
+  {
+    n: 3,
+    title: "Koeling controleren",
+    description: "Indien nodig vervang ik de koelpasta.",
+    bullets: ["Lagere temperaturen", "Minder lawaai", "Betere prestaties", "Langere levensduur"],
+  },
+  {
+    n: 4,
+    title: "Windows optimaliseren",
+    description: "Ik verwijder onnodige bestanden en programma's en optimaliseer Windows voor maximale prestaties.",
+  },
+  {
+    n: 5,
+    title: "Beveiliging controleren",
+    description: "Ik scan op virussen, malware, spyware en verdachte software. Alle beveiligingsupdates worden uitgevoerd.",
+  },
+  {
+    n: 6,
+    title: "Controle van SSD/HDD",
+    description: "Ik controleer de gezondheid van je opslag. Zo voorkom ik dataverlies.",
+  },
+  {
+    n: 7,
+    title: "Drivers & software updaten",
+    description: "Alle belangrijke software wordt bijgewerkt.",
+    bullets: ["Windows", "Drivers", "Browser", "Office & andere programma's"],
+  },
+  {
+    n: 8,
+    title: "Eindcontrole",
+    description: "Alles wordt nog eens grondig getest voor je computer terug naar huis gaat.",
+    bullets: ["Temperaturen", "Prestaties", "Stabiliteit", "Opstarttijd"],
+  },
+];
+
+const before = ["Trage opstart", "Veel lawaai", "Hoge temperatuur", "Onveilige software", "Grote kans op fouten"];
+const after = ["Snelle opstart", "Stille ventilatoren", "Betere koeling", "Alles up-to-date en veilig", "Stabiel en betrouwbaar systeem"];
+
+const whyChooseUs = [
+  { title: "Altijd rechtstreeks contact", description: "Je spreekt altijd rechtstreeks met mij.", icon: "user" },
+  { title: "Eerlijke uitleg", description: "In gewone mensentaal.", icon: "chat" },
+  { title: "Geen verborgen kosten", description: "Duidelijke prijzen, vooraf besproken.", icon: "tag" },
+  { title: "Geen verrassingen", description: "Wat we afspreken, is wat je krijgt.", icon: "check" },
+  { title: "Kwaliteit boven snelheid", description: "Ik neem de tijd voor een perfect resultaat.", icon: "star" },
+  { title: "Nazorg altijd mogelijk", description: "Ook na het onderhoud sta ik voor je klaar.", icon: "headset" },
+];
+---
+
+<BaseLayout
+  title="ifixIT — PC & laptop herstellingen in Diepenbeek"
+  description="Geef je computer een tweede jeugd. Professioneel computeronderhoud, herstellingen en optimalisatie in Diepenbeek. Snel, veilig en persoonlijk advies van Iris."
+  path="/"
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-navy-900 text-white">
+    <div class="container-page grid gap-10 py-16 lg:grid-cols-2 lg:items-center lg:py-24">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-400">Computeronderhoud</p>
+        <h1 class="mt-4 text-4xl font-extrabold leading-tight sm:text-5xl">
+          Geef je computer<br />
+          <span class="text-brand-400">een tweede jeugd.</span>
+        </h1>
+        <p class="mt-6 max-w-xl text-white/70">
+          Een computer wordt niet vanzelf trager. Stof, oude software, foutieve updates en onnodige
+          achtergrondprocessen zorgen ervoor dat je pc steeds minder vlot werkt.
+        </p>
+        <div class="mt-6">
+          <p class="text-lg font-bold">
+            <span class="text-white">I FIX</span> <span class="text-brand-400">IT</span>
+          </p>
+          <p class="mt-1 max-w-xl text-white/70">
+            Ik zorg ervoor dat je computer opnieuw snel, veilig en betrouwbaar werkt.
+          </p>
+        </div>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a
+            href="/contact/"
+            class="inline-flex items-center gap-2 rounded-md bg-brand-500 px-6 py-3.5 text-sm font-semibold text-white hover:bg-brand-600"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="h-4 w-4">
+              <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+              <path d="M3 9h18M8 2v4M16 2v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Maak een afspraak
+          </a>
+          <a
+            href="tel:+3247012 3456"
+            class="inline-flex items-center gap-2 rounded-md border border-white/25 px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/10"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="h-4 w-4">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            0470 12 34 56
+          </a>
+        </div>
+      </div>
+      <PlaceholderImage label="Foto van Iris aan het werk" class="aspect-4/3 w-full rounded-2xl" dark />
+    </div>
+  </section>
+
+  <!-- Waarom onderhoud belangrijk -->
+  <section class="bg-slate-50 py-16">
+    <div class="container-page grid gap-10 lg:grid-cols-4 lg:gap-8">
+      <h2 class="text-2xl font-extrabold leading-tight text-navy-900 lg:col-span-4 lg:text-3xl">
+        Waarom is onderhoud belangrijk?
+      </h2>
+      {whyPoints.map((point) => (
+        <div>
+          <div class="flex h-12 w-12 items-center justify-center rounded-full bg-brand-50">
+            <IconMark name={point.icon} />
+          </div>
+          <h3 class="mt-4 font-bold text-navy-900">{point.title}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-navy-900/60">{point.description}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Wat gebeurt er tijdens een onderhoud -->
+  <section class="bg-navy-900 py-16 text-white">
+    <div class="container-page">
+      <h2 class="text-center text-2xl font-extrabold sm:text-3xl">
+        Wat gebeurt er tijdens een <span class="text-brand-400">onderhoud?</span>
+      </h2>
+      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {steps.map((step) => (
+          <div class="rounded-xl border border-white/10 bg-navy-800 p-5">
+            <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand-500 text-sm font-bold">
+              {step.n}
+            </span>
+            <h3 class="mt-3 font-bold">{step.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-white/60">{step.description}</p>
+            {step.bullets && (
+              <ul class="mt-3 space-y-1 text-xs text-white/50">
+                {step.bullets.map((b) => (
+                  <li class="flex items-center gap-1.5">
+                    <span class="h-1 w-1 rounded-full bg-brand-400"></span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Het resultaat -->
+  <section class="bg-slate-50 py-16">
+    <div class="container-page grid gap-10 lg:grid-cols-2 lg:items-center">
+      <div>
+        <h2 class="text-2xl font-extrabold text-navy-900 sm:text-3xl">Het resultaat</h2>
+        <p class="mt-3 max-w-md text-navy-900/60">Na een onderhoud merk je onmiddellijk het verschil.</p>
+        <PlaceholderImage label="Laptop visual" class="mt-8 aspect-4/3 w-full rounded-2xl" />
+      </div>
+      <div class="grid gap-6 sm:grid-cols-[1fr_auto_1fr] sm:items-center">
+        <div>
+          <h3 class="text-sm font-bold uppercase tracking-wide text-navy-900/70">Voor onderhoud</h3>
+          <ul class="mt-4 space-y-3">
+            {before.map((item) => (
+              <li class="flex items-center gap-2.5 text-sm text-navy-900/70">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="h-5 w-5 shrink-0 text-red-500">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                  <path d="m15 9-6 6M9 9l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="hidden justify-center sm:flex">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="h-8 w-8 text-brand-500">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="text-sm font-bold uppercase tracking-wide text-navy-900/70">Na onderhoud</h3>
+          <ul class="mt-4 space-y-3">
+            {after.map((item) => (
+              <li class="flex items-center gap-2.5 text-sm text-navy-900/70">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="h-5 w-5 shrink-0 text-emerald-500">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                  <path d="m8 12 3 3 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Waarom kiezen voor I FIX IT -->
+  <section class="bg-navy-900 py-16 text-white">
+    <div class="container-page grid gap-10 lg:grid-cols-2 lg:items-center">
+      <PlaceholderImage label="Foto van Iris" class="aspect-4/3 w-full rounded-2xl" dark />
+      <div>
+        <h2 class="text-2xl font-extrabold leading-snug sm:text-3xl">
+          Waarom kiezen voor <span class="text-brand-400">I FIX IT?</span>
+        </h2>
+        <p class="mt-4 text-white/70">
+          Geen callcenter. Geen wachtrijen. Gewoon <span class="font-semibold text-brand-400">persoonlijk</span> advies
+          van een ervaren IT-specialist.
+        </p>
+        <div class="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2">
+          {whyChooseUs.map((item) => (
+            <div class="flex gap-3">
+              <div class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/10">
+                <IconMark name={item.icon} class="h-4 w-4 text-brand-400" />
+              </div>
+              <div>
+                <h3 class="font-semibold">{item.title}</h3>
+                <p class="mt-1 text-sm text-white/60">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA banner -->
+  <section class="bg-brand-600">
+    <div class="container-page flex flex-col items-center justify-between gap-6 py-10 text-center sm:flex-row sm:text-left">
+      <div class="flex items-center gap-4">
+        <div class="hidden h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white/15 sm:flex">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="h-6 w-6 text-white">
+            <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+            <path d="M3 9h18M8 2v4M16 2v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="text-white">
+          <h2 class="text-lg font-bold sm:text-xl">Geef je computer de zorg die hij verdient.</h2>
+          <p class="mt-1 text-sm text-white/80">
+            Een jaarlijks onderhoud voorkomt veel problemen en verlengt de levensduur van je computer.
+          </p>
+        </div>
+      </div>
+      <div class="flex shrink-0 flex-wrap justify-center gap-3">
+        <a href="/contact/" class="inline-flex items-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-semibold text-brand-700 hover:bg-white/90">
+          Maak een afspraak
+        </a>
+        <a href="tel:+3247012 3456" class="inline-flex items-center gap-2 rounded-md border border-white/40 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10">
+          0470 12 34 56
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,84 @@
+---
+import { Image } from "astro:assets";
+import logoIcon from "../assets/logo-icon.png";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-navy-950 text-white/70">
+  <div class="container-page grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <a href="/" class="flex items-center gap-2">
+        <Image src={logoIcon} alt="ifixIT logo" width={72} height={66} loading="lazy" class="h-9 w-9 object-contain" />
+        <span class="text-xl font-extrabold tracking-tight">
+          <span class="text-white">ifix</span><span class="text-brand-400">IT</span>
+        </span>
+      </a>
+      <p class="mt-4 text-sm leading-relaxed text-white/60">
+        Voor al je computerproblemen. Hardware of software, ik fix het!
+      </p>
+    </div>
+
+    <div>
+      <h3 class="text-xs font-bold uppercase tracking-widest text-brand-400">Snel naar</h3>
+      <ul class="mt-4 space-y-2.5 text-sm">
+        <li><a href="/diensten/" class="hover:text-white">Diensten</a></li>
+        <li><a href="/over-mij/" class="hover:text-white">Over mij</a></li>
+        <li><a href="/diensten/#tarieven" class="hover:text-white">Tarieven</a></li>
+        <li><a href="/faq/" class="hover:text-white">FAQ</a></li>
+        <li><a href="/contact/" class="hover:text-white">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-xs font-bold uppercase tracking-widest text-brand-400">Diensten</h3>
+      <ul class="mt-4 space-y-2.5 text-sm">
+        <li><a href="/diensten/#hardware" class="hover:text-white">PC &amp; laptop herstellingen</a></li>
+        <li><a href="/diensten/#hardware" class="hover:text-white">Hardware upgrades</a></li>
+        <li><a href="/diensten/#software" class="hover:text-white">Software oplossingen</a></li>
+        <li><a href="/diensten/#software" class="hover:text-white">Virus verwijderen</a></li>
+        <li><a href="/diensten/#software" class="hover:text-white">Back-up &amp; data herstel</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-xs font-bold uppercase tracking-widest text-brand-400">Contact</h3>
+      <ul class="mt-4 space-y-3 text-sm">
+        <li>
+          <a href="tel:+3247012 3456" class="flex items-center gap-2 hover:text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="h-4 w-4 shrink-0 text-brand-400">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+            0470 12 34 56
+          </a>
+        </li>
+        <li>
+          <a href="mailto:info@ifixit.be" class="flex items-center gap-2 hover:text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="h-4 w-4 shrink-0 text-brand-400">
+              <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="m2 7 10 6 10-6" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+            info@ifixit.be
+          </a>
+        </li>
+        <li class="flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="h-4 w-4 shrink-0 text-brand-400">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          Diepenbeek
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="container-page flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/50 sm:flex-row">
+      <p>&copy; {year} ifixIT &mdash; Alle rechten voorbehouden</p>
+      <div class="flex gap-6">
+        <a href="/algemene-voorwaarden/" class="hover:text-white">Algemene voorwaarden</a>
+        <a href="/privacybeleid/" class="hover:text-white">Privacybeleid</a>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,189 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PlaceholderImage from "../../components/PlaceholderImage.astro";
+import IconMark from "../../components/IconMark.astro";
+
+const traits = [
+  { title: "Persoonlijke aanpak", icon: "user" },
+  { title: "Eerlijk & transparant", icon: "check" },
+  { title: "Kwaliteit voorop", icon: "star" },
+  { title: "Tevreden klanten", icon: "thumbsup" },
+];
+
+const timeline = [
+  {
+    title: "Al van jongs af gefascineerd door technologie",
+    description: "Wat begon als nieuwsgierigheid naar computers en elektronica, groeide uit tot een echte passie.",
+    icon: "chip",
+  },
+  {
+    title: "Ervaring door de jaren heen",
+    description: "Door zelf te sleutelen, opleidingen te volgen en talloze problemen op te lossen, heb ik een brede en diepgaande kennis opgebouwd.",
+    icon: "code",
+  },
+  {
+    title: "Jouw probleem, mijn uitdaging",
+    description: "Elke herstelling is anders, en dat maakt het zo boeiend. Ik blijf leren, zoeken en verbeteren.",
+    icon: "wrench",
+  },
+  {
+    title: "Tevreden klanten, daar doe ik het voor",
+    description: "Het geeft mij voldoening om mensen te helpen en hun vertrouwen te verdienen.",
+    icon: "heart",
+  },
+];
+
+const values = [
+  "Eerlijke diagnose — je krijgt enkel wat je echt nodig hebt.",
+  "Geen verborgen kosten — transparante prijzen op voorhand.",
+  "Kwaliteitsonderdelen — voor een duurzame herstelling.",
+  "Duidelijke communicatie — ik leg alles uit in begrijpelijke taal.",
+  "Nazorg — ook na de herstelling sta ik voor je klaar.",
+];
+
+const strengths = [
+  { label: "PC & laptop herstelling", icon: "laptop" },
+  { label: "Hardware upgrades", icon: "chip" },
+  { label: "Software installatie", icon: "windows" },
+  { label: "Virus & malware verwijdering", icon: "shield" },
+  { label: "Back-up & data herstel", icon: "cloud" },
+  { label: "Prestatie optimalisatie", icon: "speed" },
+  { label: "Onderhoud & advies", icon: "gear" },
+];
+---
+
+<BaseLayout
+  title="Over mij — ifixIT"
+  description="Maak kennis met Iris van ifixIT. Jarenlange ervaring in hardware en software, persoonlijke aanpak en eerlijke prijzen voor al je computerproblemen in Diepenbeek."
+  path="/over-mij/"
+>
+  <!-- Hero -->
+  <section class="bg-navy-900 text-white">
+    <div class="container-page grid gap-10 py-16 lg:grid-cols-2 lg:items-center">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-400">Over mij</p>
+        <h1 class="mt-4 text-4xl font-extrabold sm:text-5xl">
+          Hallo, ik ben <span class="text-brand-400">Iris.</span>
+        </h1>
+        <p class="mt-6 max-w-xl text-white/70">
+          Al van jongs af aan ben ik geboeid door technologie. Wat voor anderen een raadsel is, zie ik als een
+          uitdaging. Ik los problemen op, vind de oorzaak en zorg voor een oplossing die werkt.
+        </p>
+        <p class="mt-4 max-w-xl font-semibold text-brand-400">
+          Computers, hardware, software … ik fix het voor je.
+        </p>
+      </div>
+      <PlaceholderImage label="Werkfoto detail" class="aspect-4/3 w-full rounded-2xl" dark />
+    </div>
+  </section>
+
+  <!-- Wie ben ik -->
+  <section class="bg-slate-50 py-16">
+    <div class="container-page grid gap-10 lg:grid-cols-2 lg:items-center">
+      <PlaceholderImage label="Foto van Iris" class="aspect-4/3 w-full rounded-2xl" />
+      <div>
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-600">Wie ben ik?</p>
+        <h2 class="mt-3 text-2xl font-extrabold text-navy-900 sm:text-3xl">
+          Techniek is mijn passie.<br />Oplossen is mijn missie.
+        </h2>
+        <p class="mt-4 text-navy-900/60">
+          Mijn naam is Iris en ik help mensen met alle computerproblemen, groot of klein. Met jarenlange ervaring in
+          hardware en software, zorg ik ervoor dat jouw computer, laptop of systeem weer perfect werkt.
+        </p>
+        <p class="mt-4 text-navy-900/60">
+          Of het nu gaat om een trage laptop, een defecte harde schijf, een virusinfectie of een volledige
+          herinstallatie — ik zoek de oorzaak en bied een oplossing die duurzaam en betrouwbaar is.
+        </p>
+        <p class="mt-4 text-navy-900/60">
+          Persoonlijke aanpak, eerlijke prijzen en duidelijke communicatie vind ik vanzelfsprekend. Ik neem de tijd om
+          naar je te luisteren en leg alles uit in mensentaal. Geen jargon, wel resultaat.
+        </p>
+        <div class="mt-8 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-4">
+          {traits.map((trait) => (
+            <div class="flex items-center gap-2">
+              <IconMark name={trait.icon} class="h-5 w-5 shrink-0 text-brand-600" />
+              <span class="text-xs font-semibold text-navy-900/80">{trait.title}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Van hobby naar expertise -->
+  <section class="bg-white py-16">
+    <div class="container-page grid gap-10 lg:grid-cols-2">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-600">Hoe het begon</p>
+        <h2 class="mt-3 text-2xl font-extrabold text-navy-900 sm:text-3xl">Van hobby naar expertise</h2>
+        <div class="mt-8 space-y-8">
+          {timeline.map((item) => (
+            <div class="flex gap-4">
+              <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-500 text-white">
+                <IconMark name={item.icon} class="h-5 w-5 text-white" />
+              </div>
+              <div>
+                <h3 class="font-bold text-navy-900">{item.title}</h3>
+                <p class="mt-1 text-sm leading-relaxed text-navy-900/60">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="rounded-2xl bg-navy-900 p-8 text-white">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-400">Waar ik voor sta</p>
+        <ul class="mt-6 space-y-4">
+          {values.map((value) => (
+            <li class="flex items-start gap-2.5 text-sm text-white/80">
+              <IconMark name="check" class="mt-0.5 h-4 w-4 shrink-0 text-brand-400" />
+              {value}
+            </li>
+          ))}
+        </ul>
+        <blockquote class="mt-8 border-t border-white/10 pt-6 text-lg font-semibold leading-snug text-white">
+          "Ik behandel jouw computer alsof het de mijne is. Zorgvuldig, met respect en oog voor detail."
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sterktes -->
+  <section class="bg-slate-50 py-16">
+    <div class="container-page text-center">
+      <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-600">Waarin ik sterk ben</p>
+      <h2 class="mt-3 text-2xl font-extrabold text-navy-900 sm:text-3xl">
+        Alles wat met jouw computer te maken heeft, fix ik.
+      </h2>
+      <div class="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4 lg:grid-cols-7">
+        {strengths.map((item) => (
+          <div class="flex flex-col items-center gap-3">
+            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-sm">
+              <IconMark name={item.icon} class="h-6 w-6 text-brand-600" />
+            </div>
+            <span class="text-xs font-semibold text-navy-900/70">{item.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-navy-900">
+    <div class="container-page grid gap-6 py-12 lg:grid-cols-[auto_1fr_auto] lg:items-center">
+      <PlaceholderImage label="Gereedschapstas" class="mx-auto aspect-square w-32 rounded-xl lg:mx-0" dark />
+      <div class="text-center text-white lg:text-left">
+        <p class="text-sm font-bold uppercase tracking-wide text-brand-400">Klaar voor een oplossing?</p>
+        <p class="mt-1 text-white/70">Ik help je graag verder! Neem contact op voor een vrijblijvende analyse of vraag.</p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-3 lg:justify-end">
+        <a href="/contact/" class="inline-flex items-center gap-2 rounded-md bg-brand-500 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-600">
+          Contacteer mij
+        </a>
+        <a href="tel:+3247012 3456" class="inline-flex items-center gap-2 rounded-md border border-white/25 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10">
+          0470 12 34 56
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,202 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PlaceholderImage from "../../components/PlaceholderImage.astro";
+import IconMark from "../../components/IconMark.astro";
+
+const categories = [
+  { id: "algemeen", label: "Algemeen", icon: "laptop" },
+  { id: "herstellingen", label: "Herstellingen", icon: "wrench" },
+  { id: "prijzen", label: "Prijzen & betalingen", icon: "tag" },
+  { id: "doorlooptijd", label: "Doorlooptijd", icon: "clock" },
+  { id: "garantie", label: "Garantie", icon: "shield" },
+  { id: "backup", label: "Back-up & data", icon: "cloud" },
+  { id: "ophalen", label: "Ophalen & terugbrengen", icon: "truck" },
+];
+
+const faqs = [
+  {
+    id: "algemeen",
+    question: "Wat doet ifixit precies?",
+    answer:
+      "Ik herstel pc's en laptops, zowel hardware als software. Van een kapot scherm tot een traag systeem, virusproblemen, dataherstel en meer. Eigenlijk alles wat met een defecte computer te maken heeft.",
+  },
+  {
+    id: "prijzen",
+    question: "Hoeveel kost een herstelling?",
+    answer:
+      "Je betaalt enkel wat er gedaan wordt. Ik werk met eerlijke en transparante prijzen (zie tarieven). Eerst diagnose, dan overleg, geen verrassingen achteraf.",
+  },
+  {
+    id: "doorlooptijd",
+    question: "Hoe lang duurt een herstelling?",
+    answer:
+      "De meeste herstellingen zijn klaar binnen 1 tot 3 werkdagen. Voor complexere problemen of onderdelen op bestelling kan het iets langer duren. Je krijgt steeds een inschatting vooraf.",
+  },
+  {
+    id: null,
+    question: "Moet ik een afspraak maken?",
+    answer:
+      "Niet altijd. Je kan gewoon langskomen, maar vooraf een seintje geven is handig zodat ik tijd voor je kan vrijmaken.",
+  },
+  {
+    id: "backup",
+    question: "Kan ik mijn data behouden?",
+    answer:
+      "Ja, in de meeste gevallen wel. Ik behandel je data met de grootste zorg. Een back-up maken is wel altijd aangeraden.",
+  },
+  {
+    id: "garantie",
+    question: "Geef je garantie op de herstellingen?",
+    answer:
+      "Ja! Op alle herstellingen geef ik 3 maanden garantie op onderdelen en werkuren. Bij softwareproblemen zoeken we samen naar een duurzame oplossing.",
+  },
+  {
+    id: "ophalen",
+    question: "Haal je de computer ook op?",
+    answer:
+      "Ja, ik bied een ophaal- en terugbrengservice aan in een straal van 15 km. Daarbuiten is dit op afspraak.",
+  },
+  {
+    id: "herstellingen",
+    question: "Wat als het probleem niet opgelost kan worden?",
+    answer: "Dan bespreek ik eerlijk met jou de opties. Transparantie en vertrouwen staan voorop.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
+
+const whyChoose = [
+  { title: "Eerlijk & transparant", description: "Geen verborgen kosten. Duidelijke prijs vooraf.", icon: "shield" },
+  { title: "Persoonlijke service", description: "Eén aanspreekpunt, korte lijnen.", icon: "user" },
+  { title: "Kwaliteit", description: "Ik werk met kwaliteitsonderdelen en zorg.", icon: "star" },
+  { title: "Snel & betrouwbaar", description: "Efficiënte service met oog voor detail.", icon: "clock" },
+  { title: "Tevreden klanten", description: "Jouw tevredenheid staat altijd voorop.", icon: "heart" },
+];
+---
+
+<BaseLayout
+  title="Veelgestelde vragen (FAQ) — ifixIT"
+  description="Antwoorden op de meest gestelde vragen over herstellingen, prijzen, garantie, doorlooptijd en de ophaalservice van ifixIT."
+  path="/faq/"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero -->
+  <section class="bg-navy-900 text-white">
+    <div class="container-page grid gap-10 py-16 lg:grid-cols-2 lg:items-center">
+      <div>
+        <h1 class="text-4xl font-extrabold sm:text-5xl">FAQ</h1>
+        <p class="mt-4 text-2xl font-bold text-brand-400">Veel vragen? Hier vind je de antwoorden.</p>
+        <p class="mt-6 max-w-xl text-white/70">
+          Staat jouw vraag er niet tussen? Neem gerust <a href="/contact/" class="text-brand-400 underline underline-offset-4">contact</a> met me op, ik help je graag verder!
+        </p>
+      </div>
+      <PlaceholderImage label="Gereedschap close-up" class="aspect-4/3 w-full rounded-2xl" dark />
+    </div>
+  </section>
+
+  <!-- FAQ content -->
+  <section class="bg-slate-50 py-16">
+    <div class="container-page grid gap-10 lg:grid-cols-[280px_1fr]">
+      <aside class="space-y-6">
+        <div class="rounded-xl border border-slate-200 bg-white p-6">
+          <h2 class="text-xs font-bold uppercase tracking-widest text-navy-900/50">Snel naar</h2>
+          <ul class="mt-4 space-y-1">
+            {categories.map((cat) => (
+              <li>
+                <a
+                  href={`#${cat.id}`}
+                  class="flex items-center gap-3 rounded-md px-2 py-2 text-sm font-medium text-navy-900/80 hover:bg-brand-50 hover:text-brand-700"
+                >
+                  <IconMark name={cat.icon} class="h-4 w-4 shrink-0 text-brand-500" />
+                  {cat.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="rounded-xl bg-brand-50 p-6">
+          <h2 class="flex items-center gap-2 text-sm font-bold text-navy-900">
+            <IconMark name="chat" class="h-5 w-5 text-brand-600" />
+            Nog een vraag?
+          </h2>
+          <p class="mt-2 text-sm text-navy-900/60">Vind je het antwoord niet? Contacteer me vrijblijvend.</p>
+          <div class="mt-4 flex flex-col gap-2">
+            <a href="/contact/" class="inline-flex items-center justify-center gap-2 rounded-md bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-600">
+              Contacteer mij
+            </a>
+            <a href="tel:+3247012 3456" class="inline-flex items-center justify-center gap-2 rounded-md border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-navy-900 hover:bg-slate-100">
+              0470 12 34 56
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <div>
+        <h2 class="flex items-center gap-2 text-lg font-bold text-navy-900">
+          <IconMark name="chat" class="h-5 w-5 text-brand-500" />
+          Veelgestelde vragen
+        </h2>
+        <div class="mt-6 divide-y divide-slate-200 rounded-xl border border-slate-200 bg-white">
+          {faqs.map((faq) => (
+            <details id={faq.id ?? undefined} class="group scroll-mt-24 px-6 py-5 open:pb-5">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-navy-900 marker:content-none">
+                {faq.question}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="h-5 w-5 shrink-0 text-brand-500 transition-transform group-open:rotate-180">
+                  <path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </summary>
+              <p class="mt-3 text-sm leading-relaxed text-navy-900/60">{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-navy-900">
+    <div class="container-page grid gap-6 py-12 lg:grid-cols-[auto_1fr_auto] lg:items-center">
+      <div class="mx-auto flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white/10 lg:mx-0">
+        <IconMark name="chat" class="h-7 w-7 text-brand-400" />
+      </div>
+      <div class="text-center text-white lg:text-left">
+        <p class="text-lg font-bold">Toch nog een vraag?</p>
+        <p class="mt-1 text-white/70">Ik help je graag verder met persoonlijk advies.</p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-3 lg:justify-end">
+        <a href="/contact/" class="inline-flex items-center gap-2 rounded-md bg-brand-500 px-5 py-3 text-sm font-semibold text-white hover:bg-brand-600">
+          Contacteer mij
+        </a>
+        <a href="tel:+3247012 3456" class="inline-flex items-center gap-2 rounded-md border border-white/25 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10">
+          0470 12 34 56
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why choose -->
+  <section class="bg-white py-12">
+    <div class="container-page text-center">
+      <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-600">Waarom kiezen voor ifixit?</p>
+      <div class="mt-8 grid grid-cols-2 gap-8 sm:grid-cols-5">
+        {whyChoose.map((item) => (
+          <div class="flex flex-col items-center gap-2 text-center">
+            <IconMark name={item.icon} class="h-6 w-6 text-brand-500" />
+            <h3 class="text-sm font-bold text-navy-900">{item.title}</h3>
+            <p class="text-xs text-navy-900/50">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

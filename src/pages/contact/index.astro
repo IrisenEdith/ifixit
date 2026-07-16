@@ -1,0 +1,139 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import IconMark from "../../components/IconMark.astro";
+
+const contactInfo = [
+  { title: "Telefoon", value: "0470 12 34 56", href: "tel:+3247012 3456", icon: "phone" },
+  { title: "E-mail", value: "info@ifixit.be", href: "mailto:info@ifixit.be", icon: "mail" },
+  { title: "Locatie", value: "Diepenbeek", href: null, icon: "pin" },
+  { title: "Openingsuren", value: "Ma – Vr: 9:00 – 18:00", href: null, icon: "clock" },
+];
+---
+
+<BaseLayout
+  title="Contact — ifixIT"
+  description="Neem contact op met ifixIT in Diepenbeek voor een vrijblijvende diagnose of vraag over PC- en laptopherstellingen, hardware upgrades of software problemen."
+  path="/contact/"
+>
+  <!-- Hero -->
+  <section class="bg-navy-900 text-white">
+    <div class="container-page py-16 text-center">
+      <h1 class="text-4xl font-extrabold sm:text-5xl">Contact</h1>
+      <p class="mx-auto mt-4 max-w-xl text-white/70">
+        Vraag, probleem of gewoon een vrijblijvende diagnose? Ik help je graag verder.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="bg-slate-50 py-16">
+    <div class="container-page grid gap-10 lg:grid-cols-[1fr_1.2fr]">
+      <!-- Info -->
+      <div class="space-y-4">
+        {contactInfo.map((item) => (
+          <div class="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-5">
+            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-50">
+              <IconMark name={item.icon} class="h-5 w-5 text-brand-600" />
+            </div>
+            <div>
+              <h2 class="text-xs font-bold uppercase tracking-wide text-navy-900/50">{item.title}</h2>
+              {item.href ? (
+                <a href={item.href} class="mt-1 block font-semibold text-navy-900 hover:text-brand-600">
+                  {item.value}
+                </a>
+              ) : (
+                <p class="mt-1 font-semibold text-navy-900">{item.value}</p>
+              )}
+            </div>
+          </div>
+        ))}
+
+        <div class="rounded-xl bg-navy-900 p-6 text-white">
+          <h2 class="flex items-center gap-2 font-bold">
+            <IconMark name="truck" class="h-5 w-5 text-brand-400" />
+            Ophaal- &amp; terugbrengservice
+          </h2>
+          <p class="mt-2 text-sm text-white/60">
+            Kan je niet langskomen? Binnen een straal van 15 km haal ik je computer op voor € 10. Daarbuiten op aanvraag.
+          </p>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="rounded-2xl border border-slate-200 bg-white p-8">
+        <h2 class="text-xl font-bold text-navy-900">Stuur een bericht</h2>
+        <p class="mt-1 text-sm text-navy-900/60">
+          Vul het formulier in en je mailprogramma opent met je bericht klaar om te versturen.
+        </p>
+        <form id="contact-form" class="mt-6 space-y-5">
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div>
+              <label for="name" class="text-sm font-semibold text-navy-900">Naam</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                class="mt-1.5 w-full rounded-md border border-slate-300 px-3.5 py-2.5 text-sm text-navy-900 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+              />
+            </div>
+            <div>
+              <label for="phone" class="text-sm font-semibold text-navy-900">Telefoon (optioneel)</label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                class="mt-1.5 w-full rounded-md border border-slate-300 px-3.5 py-2.5 text-sm text-navy-900 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+              />
+            </div>
+          </div>
+          <div>
+            <label for="email" class="text-sm font-semibold text-navy-900">E-mail</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              class="mt-1.5 w-full rounded-md border border-slate-300 px-3.5 py-2.5 text-sm text-navy-900 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+            />
+          </div>
+          <div>
+            <label for="message" class="text-sm font-semibold text-navy-900">Bericht</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              class="mt-1.5 w-full rounded-md border border-slate-300 px-3.5 py-2.5 text-sm text-navy-900 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="inline-flex items-center gap-2 rounded-md bg-brand-500 px-6 py-3 text-sm font-semibold text-white hover:bg-brand-600"
+          >
+            Verstuur bericht
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement | null;
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    const name = String(data.get("name") ?? "");
+    const phone = String(data.get("phone") ?? "");
+    const email = String(data.get("email") ?? "");
+    const message = String(data.get("message") ?? "");
+
+    const bodyLines = [message, "", `Naam: ${name}`, `E-mail: ${email}`];
+    if (phone) bodyLines.push(`Telefoon: ${phone}`);
+
+    const subject = encodeURIComponent(`Contactaanvraag via website — ${name}`);
+    const body = encodeURIComponent(bodyLines.join("\n"));
+    window.location.href = `mailto:info@ifixit.be?subject=${subject}&body=${body}`;
+  });
+</script>
