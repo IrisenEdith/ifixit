@@ -26,8 +26,13 @@ npm run preview
 - `src/assets/` — bronafbeeldingen (automatisch geoptimaliseerd door Astro)
 - `public/` — statische bestanden (favicon, robots.txt, og-image)
 
+## Deployen (Netlify)
+
+Build command: `npm run build` — publish directory: `dist` (staat ook vast in `netlify.toml`).
+
+Het contactformulier gebruikt [Netlify Forms](https://docs.netlify.com/manage/forms/setup/) (`data-netlify="true"` op het formulier in `src/pages/contact/index.astro`, met een honeypot-veld tegen spam). Inzendingen komen binnen in het Netlify-dashboard onder **Forms**. Werkt enkel wanneer de site via Netlify gehost wordt — bij een andere host moet het formulier opnieuw gekoppeld worden aan een formulierdienst.
+
 ## Openstaand
 
 - Placeholder-afbeeldingen (foto's van Iris, achtergronden) moeten vervangen worden door echte foto's — zie de blauwe kaders met "Foto volgt".
 - `/algemene-voorwaarden/` en `/privacybeleid/` zijn nog lege pagina's.
-- Het contactformulier opent de mail-app van de bezoeker (mailto) — er is geen backend. Voor formulierinzendingen zonder mailto kan later een dienst zoals Formspree gekoppeld worden.

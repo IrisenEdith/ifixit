@@ -63,9 +63,22 @@ const contactInfo = [
       <div class="rounded-2xl border border-slate-200 bg-white p-8">
         <h2 class="text-xl font-bold text-navy-900">Stuur een bericht</h2>
         <p class="mt-1 text-sm text-navy-900/60">
-          Vul het formulier in en je mailprogramma opent met je bericht klaar om te versturen.
+          Vul het formulier in, ik neem zo snel mogelijk contact met je op.
         </p>
-        <form id="contact-form" class="mt-6 space-y-5">
+        <form
+          name="contact"
+          method="POST"
+          action="/contact/bedankt/"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="mt-6 space-y-5"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="hidden">
+            <label>
+              Niet invullen indien je een mens bent: <input name="bot-field" />
+            </label>
+          </p>
           <div class="grid gap-5 sm:grid-cols-2">
             <div>
               <label for="name" class="text-sm font-semibold text-navy-900">Naam</label>
@@ -118,22 +131,3 @@ const contactInfo = [
     </div>
   </section>
 </BaseLayout>
-
-<script>
-  const form = document.getElementById("contact-form") as HTMLFormElement | null;
-  form?.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const data = new FormData(form);
-    const name = String(data.get("name") ?? "");
-    const phone = String(data.get("phone") ?? "");
-    const email = String(data.get("email") ?? "");
-    const message = String(data.get("message") ?? "");
-
-    const bodyLines = [message, "", `Naam: ${name}`, `E-mail: ${email}`];
-    if (phone) bodyLines.push(`Telefoon: ${phone}`);
-
-    const subject = encodeURIComponent(`Contactaanvraag via website — ${name}`);
-    const body = encodeURIComponent(bodyLines.join("\n"));
-    window.location.href = `mailto:info@ifixit.be?subject=${subject}&body=${body}`;
-  });
-</script>
