@@ -4,6 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import PlaceholderImage from "../components/PlaceholderImage.astro";
 import IconMark from "../components/IconMark.astro";
 import heroIris from "../assets/hero-iris.png";
+import resultaatVisual from "../assets/resultaat-visual.png";
 
 const whyPoints = [
   {
@@ -202,7 +203,14 @@ const whyChooseUs = [
       <div>
         <h2 class="text-2xl font-extrabold text-navy-900 sm:text-3xl">Het resultaat</h2>
         <p class="mt-3 max-w-md text-navy-900/60">Na een onderhoud merk je onmiddellijk het verschil.</p>
-        <PlaceholderImage label="Laptop visual" class="mt-8 aspect-4/3 w-full rounded-2xl" />
+        <Image
+          src={resultaatVisual}
+          alt="Iris herstelt een computer bij ifixIT"
+          width={900}
+          height={600}
+          loading="lazy"
+          class="mt-8 aspect-4/3 w-full rounded-2xl object-cover"
+        />
       </div>
       <div class="grid gap-6 sm:grid-cols-[1fr_auto_1fr] sm:items-center">
         <div>
