@@ -1,7 +1,9 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PlaceholderImage from "../components/PlaceholderImage.astro";
 import IconMark from "../components/IconMark.astro";
+import heroIris from "../assets/hero-iris.png";
 
 const whyPoints = [
   {
@@ -134,7 +136,15 @@ const whyChooseUs = [
           </a>
         </div>
       </div>
-      <PlaceholderImage label="Foto van Iris aan het werk" class="aspect-4/3 w-full rounded-2xl" dark />
+      <Image
+        src={heroIris}
+        alt="Iris van ifixIT herstelt een laptop in haar werkplaats"
+        width={900}
+        height={600}
+        loading="eager"
+        fetchpriority="high"
+        class="aspect-4/3 w-full rounded-2xl object-cover"
+      />
     </div>
   </section>
 
