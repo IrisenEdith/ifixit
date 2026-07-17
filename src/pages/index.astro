@@ -5,6 +5,7 @@ import PlaceholderImage from "../components/PlaceholderImage.astro";
 import IconMark from "../components/IconMark.astro";
 import heroIris from "../assets/hero-iris.png";
 import resultaatVisual from "../assets/resultaat-visual.png";
+import overMijPortret from "../assets/over-mij-portret.png";
 
 const whyPoints = [
   {
@@ -138,8 +139,8 @@ const whyChooseUs = [
         </div>
       </div>
       <Image
-        src={heroIris}
-        alt="Iris van ifixIT herstelt een laptop in haar werkplaats"
+        src={overMijPortret}
+        alt="Iris, oprichter van ifixIT"
         width={900}
         height={600}
         loading="eager"
@@ -253,7 +254,14 @@ const whyChooseUs = [
   <!-- Waarom kiezen voor I FIX IT -->
   <section class="bg-navy-900 py-16 text-white">
     <div class="container-page grid gap-10 lg:grid-cols-2 lg:items-center">
-      <PlaceholderImage label="Foto van Iris" class="aspect-4/3 w-full rounded-2xl" dark />
+      <Image
+        src={heroIris}
+        alt="Iris van ifixIT herstelt een laptop in haar werkplaats"
+        width={900}
+        height={600}
+        loading="lazy"
+        class="aspect-4/3 w-full rounded-2xl object-cover"
+      />
       <div>
         <h2 class="text-2xl font-extrabold leading-snug sm:text-3xl">
           Waarom kiezen voor <span class="text-brand-400">I FIX IT?</span>
