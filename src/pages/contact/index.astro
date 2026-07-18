@@ -16,8 +16,8 @@ const contactInfo = [
   path="/contact/"
 >
   <!-- Hero -->
-  <section class="bg-navy-900 text-white">
-    <div class="container-page py-16 text-center">
+  <section class="relative overflow-hidden bg-gradient-to-br from-navy-900 to-navy-600 text-white">
+    <div class="container-page py-16 text-center" data-reveal>
       <h1 class="text-4xl font-extrabold sm:text-5xl">Contact</h1>
       <p class="mx-auto mt-4 max-w-xl text-white/70">
         Vraag, probleem of gewoon een vrijblijvende diagnose? Ik help je graag verder.
@@ -26,29 +26,29 @@ const contactInfo = [
   </section>
 
   <!-- Content -->
-  <section class="bg-slate-50 py-16">
+  <section class="bg-surface py-16">
     <div class="container-page grid gap-10 lg:grid-cols-[1fr_1.2fr]">
       <!-- Info -->
-      <div class="space-y-4">
+      <div class="space-y-4" data-reveal>
         {contactInfo.map((item) => (
-          <div class="flex items-start gap-4 rounded-xl border border-slate-200 bg-white p-5">
+          <div class="flex items-start gap-4 rounded-[20px] border border-slate-200 bg-white p-5 shadow-sm">
             <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-50">
               <IconMark name={item.icon} class="h-5 w-5 text-brand-600" />
             </div>
             <div>
-              <h2 class="text-xs font-bold uppercase tracking-wide text-navy-900/50">{item.title}</h2>
+              <h2 class="text-xs font-bold uppercase tracking-wide text-ink-muted">{item.title}</h2>
               {item.href ? (
-                <a href={item.href} class="mt-1 block font-semibold text-navy-900 hover:text-brand-600">
+                <a href={item.href} class="mt-1 block font-semibold text-ink hover:text-brand-600">
                   {item.value}
                 </a>
               ) : (
-                <p class="mt-1 font-semibold text-navy-900">{item.value}</p>
+                <p class="mt-1 font-semibold text-ink">{item.value}</p>
               )}
             </div>
           </div>
         ))}
 
-        <div class="rounded-xl bg-navy-900 p-6 text-white">
+        <div class="rounded-[20px] bg-navy-900 p-6 text-white">
           <h2 class="flex items-center gap-2 font-bold">
             <IconMark name="truck" class="h-5 w-5 text-brand-400" />
             Ophaal- &amp; terugbrengservice
@@ -60,9 +60,9 @@ const contactInfo = [
       </div>
 
       <!-- Form -->
-      <div class="rounded-2xl border border-slate-200 bg-white p-8">
-        <h2 class="text-xl font-bold text-navy-900">Stuur een bericht</h2>
-        <p class="mt-1 text-sm text-navy-900/60">
+      <div class="card p-8" data-reveal>
+        <h2 class="text-xl font-bold text-ink">Stuur een bericht</h2>
+        <p class="mt-1 text-sm text-ink-muted">
           Vul het formulier in, ik neem zo snel mogelijk contact met je op.
         </p>
         <form
@@ -81,48 +81,48 @@ const contactInfo = [
           </p>
           <div class="grid gap-5 sm:grid-cols-2">
             <div>
-              <label for="name" class="text-sm font-semibold text-navy-900">Naam</label>
+              <label for="name" class="text-sm font-semibold text-ink">Naam</label>
               <input
                 id="name"
                 name="name"
                 type="text"
                 required
-                class="mt-1.5 w-full rounded-md border border-slate-300 px-3.5 py-2.5 text-sm text-navy-900 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+                class="mt-1.5 w-full rounded-md border border-slate-300 px-3.5 py-2.5 text-sm text-ink focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
               />
             </div>
             <div>
-              <label for="phone" class="text-sm font-semibold text-navy-900">Telefoon (optioneel)</label>
+              <label for="phone" class="text-sm font-semibold text-ink">Telefoon (optioneel)</label>
               <input
                 id="phone"
                 name="phone"
                 type="tel"
-                class="mt-1.5 w-full rounded-md border border-slate-300 px-3.5 py-2.5 text-sm text-navy-900 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+                class="mt-1.5 w-full rounded-md border border-slate-300 px-3.5 py-2.5 text-sm text-ink focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
               />
             </div>
           </div>
           <div>
-            <label for="email" class="text-sm font-semibold text-navy-900">E-mail</label>
+            <label for="email" class="text-sm font-semibold text-ink">E-mail</label>
             <input
               id="email"
               name="email"
               type="email"
               required
-              class="mt-1.5 w-full rounded-md border border-slate-300 px-3.5 py-2.5 text-sm text-navy-900 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+              class="mt-1.5 w-full rounded-md border border-slate-300 px-3.5 py-2.5 text-sm text-ink focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
             />
           </div>
           <div>
-            <label for="message" class="text-sm font-semibold text-navy-900">Bericht</label>
+            <label for="message" class="text-sm font-semibold text-ink">Bericht</label>
             <textarea
               id="message"
               name="message"
               rows="5"
               required
-              class="mt-1.5 w-full rounded-md border border-slate-300 px-3.5 py-2.5 text-sm text-navy-900 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+              class="mt-1.5 w-full rounded-md border border-slate-300 px-3.5 py-2.5 text-sm text-ink focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
             ></textarea>
           </div>
           <button
             type="submit"
-            class="inline-flex items-center gap-2 rounded-md bg-brand-500 px-6 py-3 text-sm font-semibold text-white hover:bg-brand-600"
+            class="btn-primary inline-flex items-center gap-2 rounded-md px-6 py-3 text-sm font-semibold"
           >
             Verstuur bericht
           </button>
