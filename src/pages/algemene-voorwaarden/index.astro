@@ -1,22 +1,236 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const sections = [
+  { id: "aanbieding-van-het-toestel", title: "Aanbieding van het toestel" },
+  { id: "diagnose", title: "Diagnose" },
+  { id: "goedkeuring", title: "Goedkeuring" },
+  { id: "gegevens-en-back-ups", title: "Gegevens en back-ups" },
+  { id: "back-up-op-verzoek", title: "Back-up op verzoek" },
+  { id: "vertrouwelijkheid", title: "Vertrouwelijkheid" },
+  { id: "wachtwoorden", title: "Wachtwoorden" },
+  { id: "onderdelen", title: "Onderdelen" },
+  { id: "garantie", title: "Garantie" },
+  { id: "niet-herstelbare-toestellen", title: "Niet-herstelbare toestellen" },
+  { id: "afhaling", title: "Afhaling" },
+  { id: "niet-afgehaalde-toestellen", title: "Niet-afgehaalde toestellen" },
+  { id: "weigering-van-een-opdracht", title: "Weigering van een opdracht" },
+  { id: "aanvullende-bepalingen", title: "Aanvullende bepalingen" },
+];
 ---
 
 <BaseLayout
-  title="Algemene voorwaarden — ifixIT"
-  description="Algemene voorwaarden van ifixIT voor PC- en laptopherstellingen."
+  title="Algemene voorwaarden voor herstellingen — ifixIT"
+  description="Algemene voorwaarden van ifixIT voor herstellingen, onderhoud, upgrades en diagnoses van toestellen."
   path="/algemene-voorwaarden/"
 >
+  <!-- Hero -->
   <section class="bg-navy-900 py-14 text-white">
     <div class="container-page">
-      <h1 class="text-3xl font-extrabold sm:text-4xl">Algemene voorwaarden</h1>
+      <h1 class="text-3xl font-bold sm:text-4xl">
+        <span class="text-gradient-accent">Algemene voorwaarden</span> voor herstellingen
+      </h1>
+      <p class="mt-3 text-sm text-white/50">
+        Versie 1.0 &ndash; Laatst bijgewerkt op <span class="italic">[datum]</span>
+      </p>
     </div>
   </section>
-  <section class="container-page max-w-3xl py-14 text-ink/80">
-    <p class="leading-relaxed">
-      Deze pagina volgt binnenkort met de volledige algemene voorwaarden van ifixIT. Voor vragen over prijzen,
-      garantie of levering kan je ondertussen steeds
-      <a href="/contact/" class="font-semibold text-brand-600 underline underline-offset-4">contact</a> opnemen.
-    </p>
+
+  <!-- Content -->
+  <section class="bg-surface py-16">
+    <div class="container-page max-w-5xl grid gap-12 lg:grid-cols-[220px_1fr] lg:items-start">
+      <!-- TOC -->
+      <nav class="hidden lg:sticky lg:top-28 lg:block" aria-label="Inhoudsopgave">
+        <p class="font-mono text-xs uppercase tracking-widest text-ink-muted">Inhoud</p>
+        <ol class="mt-4 space-y-2.5 text-sm">
+          {sections.map((s, i) => (
+            <li>
+              <a href={`#${s.id}`} class="text-ink-muted transition-colors hover:text-brand-600">
+                Art. {i + 1} &mdash; {s.title}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+
+      <!-- Body -->
+      <div class="max-w-3xl text-ink-muted">
+        <p class="leading-relaxed">
+          Deze voorwaarden zijn een aanvulling op de
+          <a href="/voorwaarden/" class="font-semibold text-brand-600 hover:underline">Algemene Voorwaarden</a> van
+          IFIXIT en zijn uitsluitend van toepassing op herstellingen, onderhoud, upgrades en diagnoses van
+          toestellen.
+        </p>
+
+        <div class="mt-10 space-y-12">
+          <!-- 1 -->
+          <section id="aanbieding-van-het-toestel" class="scroll-mt-28">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 1 &mdash; Aanbieding van het toestel</h2>
+            <p class="mt-4 leading-relaxed">De klant biedt het toestel aan in de staat waarin het zich bevindt.</p>
+            <p class="mt-4 leading-relaxed">
+              De klant meldt alle gekende defecten en verstrekt alle informatie die noodzakelijk is voor een
+              correcte diagnose.
+            </p>
+          </section>
+
+          <!-- 2 -->
+          <section id="diagnose" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 2 &mdash; Diagnose</h2>
+            <p class="mt-4 leading-relaxed">
+              Wanneer een diagnose noodzakelijk is, wordt de klant vooraf geïnformeerd over eventuele
+              diagnosekosten.
+            </p>
+            <p class="mt-4 leading-relaxed">
+              Na de diagnose ontvangt de klant een prijsvoorstel indien een herstelling mogelijk is.
+            </p>
+          </section>
+
+          <!-- 3 -->
+          <section id="goedkeuring" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 3 &mdash; Goedkeuring</h2>
+            <p class="mt-4 leading-relaxed">
+              Een herstelling wordt uitsluitend uitgevoerd nadat de klant hiervoor toestemming heeft gegeven, tenzij
+              vooraf anders werd overeengekomen.
+            </p>
+          </section>
+
+          <!-- 4 -->
+          <section id="gegevens-en-back-ups" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 4 &mdash; Gegevens en back-ups</h2>
+            <p class="mt-4 leading-relaxed">
+              De klant blijft volledig verantwoordelijk voor het maken van een recente back-up van alle gegevens
+              vóór het toestel wordt aangeboden.
+            </p>
+            <p class="mt-4 leading-relaxed">
+              Hoewel IFIXIT met de grootste zorg werkt, kan gegevensverlies nooit volledig worden uitgesloten.
+            </p>
+            <p class="mt-4 leading-relaxed">IFIXIT is niet aansprakelijk voor verlies of beschadiging van gegevens.</p>
+          </section>
+
+          <!-- 5 -->
+          <section id="back-up-op-verzoek" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 5 &mdash; Back-up op verzoek</h2>
+            <p class="mt-4 leading-relaxed">
+              Op uitdrukkelijk verzoek van de klant kan IFIXIT, indien technisch mogelijk en mits toegang tot de
+              gegevens, een back-up uitvoeren vóór de herstelling.
+            </p>
+            <p class="mt-4 leading-relaxed">
+              Het uitvoeren van een back-up biedt geen garantie dat alle gegevens volledig kunnen worden
+              veiliggesteld.
+            </p>
+          </section>
+
+          <!-- 6 -->
+          <section id="vertrouwelijkheid" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 6 &mdash; Vertrouwelijkheid</h2>
+            <p class="mt-4 leading-relaxed">
+              Tijdens de uitvoering van een herstelling kan IFIXIT toegang krijgen tot gegevens die zich op het
+              toestel bevinden. Deze gegevens worden strikt vertrouwelijk behandeld.
+            </p>
+            <p class="mt-4 leading-relaxed">
+              Persoonlijke bestanden worden uitsluitend geopend wanneer dit technisch noodzakelijk is voor de
+              diagnose, herstelling of controle van de goede werking van het toestel.
+            </p>
+          </section>
+
+          <!-- 7 -->
+          <section id="wachtwoorden" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 7 &mdash; Wachtwoorden</h2>
+            <p class="mt-4 leading-relaxed">
+              Wanneer een wachtwoord noodzakelijk is voor de uitvoering van de opdracht, verstrekt de klant dit
+              tijdelijk aan IFIXIT.
+            </p>
+            <p class="mt-4 leading-relaxed">
+              Na de herstelling wordt de klant aangeraden alle wachtwoorden onmiddellijk te wijzigen.
+            </p>
+          </section>
+
+          <!-- 8 -->
+          <section id="onderdelen" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 8 &mdash; Onderdelen</h2>
+            <p class="mt-4 leading-relaxed">
+              IFIXIT gebruikt nieuwe of kwalitatief gelijkwaardige onderdelen, tenzij uitdrukkelijk anders werd
+              overeengekomen.
+            </p>
+            <p class="mt-4 leading-relaxed">Indien originele onderdelen niet langer verkrijgbaar zijn, wordt een passend alternatief voorgesteld.</p>
+          </section>
+
+          <!-- 9 -->
+          <section id="garantie" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 9 &mdash; Garantie</h2>
+            <p class="mt-4 leading-relaxed">Garantie geldt uitsluitend op de uitgevoerde herstelling en de vervangen onderdelen.</p>
+            <p class="mt-4 leading-relaxed">De garantie vervalt onder meer indien:</p>
+            <ul class="mt-4 space-y-2.5 text-sm">
+              {[
+                "het toestel nadien door derden werd geopend",
+                "het toestel verkeerd werd gebruikt",
+                "er nieuwe schade ontstond",
+                "het defect geen verband houdt met de uitgevoerde herstelling",
+              ].map((item) => (
+                <li class="flex items-start gap-2.5">
+                  <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-500"></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <!-- 10 -->
+          <section id="niet-herstelbare-toestellen" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 10 &mdash; Niet-herstelbare toestellen</h2>
+            <p class="mt-4 leading-relaxed">Niet elk toestel kan worden hersteld.</p>
+            <p class="mt-4 leading-relaxed">IFIXIT kan nooit garanderen dat een herstelling technisch of economisch haalbaar is.</p>
+          </section>
+
+          <!-- 11 -->
+          <section id="afhaling" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 11 &mdash; Afhaling</h2>
+            <p class="mt-4 leading-relaxed">De klant wordt verwittigd zodra het toestel klaar is.</p>
+            <p class="mt-4 leading-relaxed">Wij verzoeken de klant het toestel zo snel mogelijk af te halen.</p>
+          </section>
+
+          <!-- 12 -->
+          <section id="niet-afgehaalde-toestellen" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 12 &mdash; Niet-afgehaalde toestellen</h2>
+            <p class="mt-4 leading-relaxed">
+              Wanneer een toestel gedurende meer dan zes maanden na de kennisgeving niet wordt afgehaald en
+              meerdere contactpogingen zonder resultaat blijven, behoudt IFIXIT zich het recht voor om, na een
+              laatste schriftelijke ingebrekestelling en binnen de grenzen van de toepasselijke Belgische
+              wetgeving, passende maatregelen te nemen met betrekking tot het toestel. Eventuele openstaande
+              kosten blijven verschuldigd.
+            </p>
+          </section>
+
+          <!-- 13 -->
+          <section id="weigering-van-een-opdracht" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 13 &mdash; Weigering van een opdracht</h2>
+            <p class="mt-4 leading-relaxed">IFIXIT behoudt zich het recht voor een opdracht te weigeren indien:</p>
+            <ul class="mt-4 space-y-2.5 text-sm">
+              {[
+                "een herstelling technisch onverantwoord is",
+                "onderdelen niet beschikbaar zijn",
+                "veiligheidsrisico's bestaan",
+                "de kostprijs niet verantwoord is ten opzichte van de waarde van het toestel",
+              ].map((item) => (
+                <li class="flex items-start gap-2.5">
+                  <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-500"></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <!-- 14 -->
+          <section id="aanvullende-bepalingen" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 14 &mdash; Aanvullende bepalingen</h2>
+            <p class="mt-4 leading-relaxed">
+              Voor alle onderwerpen die niet uitdrukkelijk in deze voorwaarden zijn geregeld, zijn de
+              <a href="/voorwaarden/" class="font-semibold text-brand-600 hover:underline">Algemene Voorwaarden</a>
+              van IFIXIT van toepassing.
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
   </section>
 </BaseLayout>

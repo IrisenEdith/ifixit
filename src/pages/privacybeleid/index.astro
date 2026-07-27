@@ -1,5 +1,24 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const sections = [
+  { id: "verwerkingsverantwoordelijke", title: "Verwerkingsverantwoordelijke" },
+  { id: "welke-gegevens", title: "Welke persoonsgegevens verzamelen wij?" },
+  { id: "waarom-verwerken", title: "Waarom verwerken wij jouw gegevens?" },
+  { id: "rechtsgrond", title: "Rechtsgrond van de verwerking" },
+  { id: "bewaartermijn", title: "Bewaartermijn" },
+  { id: "gegevens-tijdens-herstelling", title: "Gegevens tijdens een herstelling" },
+  { id: "back-ups", title: "Back-ups" },
+  { id: "delen-met-derden", title: "Met wie delen wij jouw gegevens?" },
+  { id: "doorgifte-buiten-eer", title: "Doorgifte buiten de Europese Economische Ruimte" },
+  { id: "beveiliging", title: "Beveiliging" },
+  { id: "contactformulier", title: "Contactformulier" },
+  { id: "whatsapp", title: "WhatsApp" },
+  { id: "cookies", title: "Cookies" },
+  { id: "jouw-rechten", title: "Jouw rechten" },
+  { id: "klachten", title: "Klachten" },
+  { id: "wijzigingen", title: "Wijzigingen" },
+];
 ---
 
 <BaseLayout
@@ -7,16 +26,322 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   description="Privacybeleid van ifixIT over de verwerking van persoonsgegevens."
   path="/privacybeleid/"
 >
+  <!-- Hero -->
   <section class="bg-navy-900 py-14 text-white">
     <div class="container-page">
-      <h1 class="text-3xl font-extrabold sm:text-4xl">Privacybeleid</h1>
+      <h1 class="text-3xl font-bold sm:text-4xl"><span class="text-gradient-accent">Privacybeleid</span></h1>
+      <p class="mt-3 text-sm text-white/50">
+        Laatst bijgewerkt: <span class="italic">[datum invullen]</span>
+      </p>
     </div>
   </section>
-  <section class="container-page max-w-3xl py-14 text-ink/80">
-    <p class="leading-relaxed">
-      Deze pagina volgt binnenkort met het volledige privacybeleid van ifixIT. Voor vragen over hoe je gegevens
-      worden verwerkt kan je ondertussen steeds
-      <a href="/contact/" class="font-semibold text-brand-600 underline underline-offset-4">contact</a> opnemen.
-    </p>
+
+  <!-- Content -->
+  <section class="bg-surface py-16">
+    <div class="container-page max-w-5xl grid gap-12 lg:grid-cols-[220px_1fr] lg:items-start">
+      <!-- TOC -->
+      <nav class="hidden lg:sticky lg:top-28 lg:block" aria-label="Inhoudsopgave">
+        <p class="font-mono text-xs uppercase tracking-widest text-ink-muted">Inhoud</p>
+        <ol class="mt-4 space-y-2.5 text-sm">
+          {sections.map((s, i) => (
+            <li>
+              <a href={`#${s.id}`} class="text-ink-muted transition-colors hover:text-brand-600">
+                {i + 1}. {s.title}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+
+      <!-- Body -->
+      <div class="max-w-3xl text-ink-muted">
+        <p class="font-display text-lg font-bold text-ink">Privacybeleid van IFIXIT</p>
+        <p class="mt-4 leading-relaxed">
+          Bij IFIXIT hechten we veel belang aan jouw privacy en de bescherming van jouw persoonsgegevens. Wij
+          verwerken jouw gegevens steeds in overeenstemming met de Algemene Verordening Gegevensbescherming
+          (AVG/GDPR), de Belgische Privacywet van 30 juli 2018 en andere toepasselijke wetgeving.
+        </p>
+        <p class="mt-4 leading-relaxed">
+          Door gebruik te maken van onze website of diensten ga je akkoord met dit privacybeleid.
+        </p>
+
+        <div class="mt-12 space-y-12">
+          <!-- 1 -->
+          <section id="verwerkingsverantwoordelijke" class="scroll-mt-28">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">1. Verwerkingsverantwoordelijke</h2>
+            <div class="mt-4 rounded-[20px] border border-slate-200 bg-white p-5">
+              <p class="font-display font-bold text-ink">IFIXIT</p>
+              <dl class="mt-3 space-y-1.5 text-sm">
+                <div class="flex flex-wrap gap-1.5">
+                  <dt class="text-ink-muted">E-mail:</dt>
+                  <dd><a href="mailto:iris@irisduym.be" class="font-semibold text-brand-600 hover:underline">iris@irisduym.be</a></dd>
+                </div>
+                <div class="flex flex-wrap gap-1.5">
+                  <dt class="text-ink-muted">Vestigingsadres:</dt>
+                  <dd class="italic text-ink-muted/70">wordt aangevuld</dd>
+                </div>
+                <div class="flex flex-wrap gap-1.5">
+                  <dt class="text-ink-muted">Ondernemingsnummer:</dt>
+                  <dd class="italic text-ink-muted/70">wordt aangevuld</dd>
+                </div>
+              </dl>
+            </div>
+          </section>
+
+          <!-- 2 -->
+          <section id="welke-gegevens" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">2. Welke persoonsgegevens verzamelen wij?</h2>
+            <p class="mt-4 leading-relaxed">Afhankelijk van de dienst kunnen wij de volgende gegevens verwerken:</p>
+            <ul class="mt-4 space-y-2.5 text-sm">
+              {[
+                "Voor- en achternaam",
+                "E-mailadres",
+                "Adres (indien nodig voor facturatie of dienstverlening)",
+                "Telefoonnummer indien je dit vrijwillig opgeeft",
+                "Gegevens die je invult via het contactformulier",
+                "Gegevens die je vrijwillig doorstuurt via WhatsApp",
+                "Informatie over het toestel dat je laat herstellen",
+                "Eventuele communicatie per e-mail",
+              ].map((item) => (
+                <li class="flex items-start gap-2.5">
+                  <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-500"></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p class="mt-4 leading-relaxed">
+              Wij verzamelen geen bijzondere categorieën van persoonsgegevens tenzij dit noodzakelijk is voor de
+              uitvoering van onze dienstverlening.
+            </p>
+          </section>
+
+          <!-- 3 -->
+          <section id="waarom-verwerken" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">3. Waarom verwerken wij jouw gegevens?</h2>
+            <p class="mt-4 leading-relaxed">Wij verwerken persoonsgegevens uitsluitend voor de volgende doeleinden:</p>
+            <ul class="mt-4 space-y-2.5 text-sm">
+              {[
+                "beantwoorden van vragen",
+                "opmaken van offertes",
+                "plannen van afspraken",
+                "uitvoeren van herstellingen",
+                "communiceren over een lopende herstelling",
+                "opmaken van facturen",
+                "voldoen aan wettelijke verplichtingen",
+                "verbeteren van onze dienstverlening",
+              ].map((item) => (
+                <li class="flex items-start gap-2.5">
+                  <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-500"></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p class="mt-4 leading-relaxed">Wij verkopen jouw persoonsgegevens nooit aan derden.</p>
+          </section>
+
+          <!-- 4 -->
+          <section id="rechtsgrond" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">4. Rechtsgrond van de verwerking</h2>
+            <p class="mt-4 leading-relaxed">Wij verwerken persoonsgegevens op basis van:</p>
+            <ul class="mt-4 space-y-2.5 text-sm">
+              {[
+                "jouw toestemming",
+                "de uitvoering van een overeenkomst",
+                "een wettelijke verplichting",
+                "een gerechtvaardigd belang, zoals klantenservice en beveiliging",
+              ].map((item) => (
+                <li class="flex items-start gap-2.5">
+                  <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-500"></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <!-- 5 -->
+          <section id="bewaartermijn" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">5. Bewaartermijn</h2>
+            <p class="mt-4 leading-relaxed">
+              Wij bewaren persoonsgegevens niet langer dan noodzakelijk. Algemeen gelden volgende bewaartermijnen:
+            </p>
+            <ul class="mt-4 space-y-2.5 text-sm">
+              {[
+                "Contactaanvragen: maximaal 12 maanden",
+                "Offertes: maximaal 2 jaar",
+                "Facturen: 7 jaar conform de Belgische fiscale wetgeving",
+                "Herstelhistoriek: zolang noodzakelijk voor garantie en dienstverlening",
+              ].map((item) => (
+                <li class="flex items-start gap-2.5">
+                  <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-500"></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <!-- 6 -->
+          <section id="gegevens-tijdens-herstelling" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">6. Gegevens tijdens een herstelling</h2>
+            <p class="mt-4 leading-relaxed">
+              Tijdens een herstelling kan IFIXIT toegang krijgen tot gegevens die zich op jouw computer, laptop of
+              opslagmedium bevinden. Wij behandelen deze gegevens strikt vertrouwelijk.
+            </p>
+            <p class="mt-4 leading-relaxed">
+              Wij openen of bekijken persoonlijke bestanden uitsluitend wanneer dit technisch noodzakelijk is voor:
+            </p>
+            <ul class="mt-4 space-y-2.5 text-sm">
+              {["diagnose", "testen", "controle van de goede werking"].map((item) => (
+                <li class="flex items-start gap-2.5">
+                  <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-500"></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p class="mt-4 leading-relaxed">Wij gebruiken deze gegevens nooit voor andere doeleinden.</p>
+          </section>
+
+          <!-- 7 -->
+          <section id="back-ups" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">7. Back-ups</h2>
+            <p class="mt-4 leading-relaxed">
+              De klant blijft steeds verantwoordelijk voor het maken van een back-up van zijn of haar gegevens vóór
+              een toestel wordt aangeboden voor herstelling. IFIXIT is niet aansprakelijk voor verlies van gegevens
+              tijdens een herstelling.
+            </p>
+            <p class="mt-4 leading-relaxed">
+              Op uitdrukkelijk verzoek van de klant kan IFIXIT, indien technisch mogelijk en mits toegang tot de
+              gegevens, een back-up uitvoeren vóór de herstelling. Dit gebeurt uitsluitend na akkoord van de klant.
+            </p>
+          </section>
+
+          <!-- 8 -->
+          <section id="delen-met-derden" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">8. Met wie delen wij jouw gegevens?</h2>
+            <p class="mt-4 leading-relaxed">Wij delen persoonsgegevens uitsluitend wanneer dit noodzakelijk is. Mogelijke ontvangers zijn:</p>
+            <ul class="mt-4 space-y-2.5 text-sm">
+              {["boekhouder", "hostingprovider", "e-mailprovider", "overheidsinstanties indien wettelijk verplicht"].map((item) => (
+                <li class="flex items-start gap-2.5">
+                  <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-500"></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p class="mt-4 leading-relaxed">Wij verkopen nooit persoonsgegevens.</p>
+          </section>
+
+          <!-- 9 -->
+          <section id="doorgifte-buiten-eer" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">9. Doorgifte buiten de Europese Economische Ruimte</h2>
+            <p class="mt-4 leading-relaxed">
+              IFIXIT streeft ernaar persoonsgegevens uitsluitend binnen de Europese Economische Ruimte te verwerken.
+              Indien een leverancier persoonsgegevens buiten de EER verwerkt, gebeurt dit uitsluitend met passende
+              waarborgen overeenkomstig de AVG.
+            </p>
+          </section>
+
+          <!-- 10 -->
+          <section id="beveiliging" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">10. Beveiliging</h2>
+            <p class="mt-4 leading-relaxed">Wij nemen passende technische en organisatorische maatregelen om persoonsgegevens te beschermen tegen:</p>
+            <ul class="mt-4 space-y-2.5 text-sm">
+              {["verlies", "misbruik", "ongeoorloofde toegang", "wijziging", "openbaarmaking"].map((item) => (
+                <li class="flex items-start gap-2.5">
+                  <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-500"></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p class="mt-4 leading-relaxed">Onze systemen worden regelmatig bijgewerkt en beveiligd.</p>
+          </section>
+
+          <!-- 11 -->
+          <section id="contactformulier" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">11. Contactformulier</h2>
+            <p class="mt-4 leading-relaxed">
+              Wanneer je ons contactformulier gebruikt, verwerken wij uitsluitend de gegevens die nodig zijn om jouw
+              vraag te beantwoorden. Deze gegevens worden niet gebruikt voor marketingdoeleinden.
+            </p>
+          </section>
+
+          <!-- 12 -->
+          <section id="whatsapp" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">12. WhatsApp</h2>
+            <p class="mt-4 leading-relaxed">
+              Via onze website kun je ervoor kiezen contact op te nemen via WhatsApp. Wanneer je hiervan gebruik
+              maakt, zijn naast dit privacybeleid ook de privacyvoorwaarden van WhatsApp van toepassing. IFIXIT heeft
+              geen controle over de verwerking van gegevens door WhatsApp.
+            </p>
+          </section>
+
+          <!-- 13 -->
+          <section id="cookies" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">13. Cookies</h2>
+            <p class="mt-4 leading-relaxed">
+              Onze website gebruikt uitsluitend functionele cookies die noodzakelijk zijn voor een correcte werking
+              van de website. Wij gebruiken geen Google Analytics of andere trackingdiensten.
+            </p>
+            <p class="mt-4 leading-relaxed">Meer informatie vind je in ons Cookiebeleid.</p>
+          </section>
+
+          <!-- 14 -->
+          <section id="jouw-rechten" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">14. Jouw rechten</h2>
+            <p class="mt-4 leading-relaxed">Je hebt steeds het recht om:</p>
+            <ul class="mt-4 space-y-2.5 text-sm">
+              {[
+                "jouw persoonsgegevens in te kijken",
+                "gegevens te laten verbeteren",
+                "gegevens te laten verwijderen",
+                "verwerking te beperken",
+                "bezwaar te maken tegen verwerking",
+                "jouw gegevens over te dragen",
+                "jouw toestemming in te trekken",
+              ].map((item) => (
+                <li class="flex items-start gap-2.5">
+                  <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-500"></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p class="mt-4 leading-relaxed">
+              Hiervoor kun je contact opnemen via
+              <a href="mailto:iris@irisduym.be" class="font-semibold text-brand-600 hover:underline">iris@irisduym.be</a>
+            </p>
+          </section>
+
+          <!-- 15 -->
+          <section id="klachten" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">15. Klachten</h2>
+            <p class="mt-4 leading-relaxed">
+              Indien je meent dat jouw persoonsgegevens onrechtmatig worden verwerkt, kun je een klacht indienen bij:
+            </p>
+            <div class="mt-4 rounded-[20px] border border-slate-200 bg-white p-5 text-sm">
+              <p class="font-display font-bold text-ink">Gegevensbeschermingsautoriteit (GBA)</p>
+              <p class="mt-1">Drukpersstraat 35</p>
+              <p>1000 Brussel</p>
+              <p class="mt-2">
+                <a
+                  href="https://www.gegevensbeschermingsautoriteit.be"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="font-semibold text-brand-600 hover:underline"
+                >
+                  www.gegevensbeschermingsautoriteit.be
+                </a>
+              </p>
+            </div>
+          </section>
+
+          <!-- 16 -->
+          <section id="wijzigingen" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">16. Wijzigingen</h2>
+            <p class="mt-4 leading-relaxed">
+              IFIXIT behoudt zich het recht voor dit privacybeleid aan te passen wanneer wetgeving of dienstverlening
+              wijzigt. De meest recente versie is steeds beschikbaar op deze website.
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
   </section>
 </BaseLayout>

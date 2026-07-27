@@ -61,9 +61,8 @@ const strengths = [
   <section class="relative overflow-hidden bg-gradient-to-br from-navy-900 to-navy-600 text-white">
     <div class="container-page grid gap-10 py-16 lg:grid-cols-2 lg:items-center">
       <div data-reveal>
-        <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-400">Over mij</p>
-        <h1 class="mt-4 text-4xl font-extrabold sm:text-5xl">
-          Hallo, ik ben <span class="text-brand-400">Iris.</span>
+        <h1 class="text-4xl font-bold sm:text-5xl">
+          Hallo, ik ben <span class="text-gradient-accent">Iris.</span>
         </h1>
         <p class="mt-6 max-w-xl text-white/70">
           Al van jongs af aan ben ik geboeid door technologie. Wat voor anderen een raadsel is, zie ik als een
@@ -84,8 +83,8 @@ const strengths = [
     <div class="container-page grid gap-10 lg:grid-cols-2 lg:items-center">
       <PlaceholderImage label="Foto van Iris" class="photo-frame aspect-4/3 w-full" data-reveal />
       <div data-reveal>
-        <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-600">Wie ben ik?</p>
-        <h2 class="mt-3 text-2xl font-extrabold text-ink sm:text-3xl">
+        <p class="eyebrow text-brand-600">Wie ben ik?</p>
+        <h2 class="mt-3 text-2xl font-bold text-ink sm:text-3xl">
           Techniek is mijn passie.<br />Oplossen is mijn missie.
         </h2>
         <p class="mt-4 text-ink-muted">
@@ -100,10 +99,10 @@ const strengths = [
           Persoonlijke aanpak, eerlijke prijzen en duidelijke communicatie vind ik vanzelfsprekend. Ik neem de tijd om
           naar je te luisteren en leg alles uit in mensentaal. Geen jargon, wel resultaat.
         </p>
-        <div class="mt-8 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-4">
+        <div class="mt-8 grid grid-cols-2 gap-x-3 gap-y-3 sm:grid-cols-4">
           {traits.map((trait) => (
-            <div class="flex items-center gap-2">
-              <IconMark name={trait.icon} class="h-5 w-5 shrink-0 text-brand-600" />
+            <div class="group flex items-center gap-2 rounded-xl px-3 py-2 -mx-3 transition-colors duration-300 hover:bg-brand-50">
+              <IconMark name={trait.icon} class="h-5 w-5 shrink-0 text-brand-600 transition-transform duration-300 group-hover:scale-110" />
               <span class="text-xs font-semibold text-ink/80">{trait.title}</span>
             </div>
           ))}
@@ -115,17 +114,18 @@ const strengths = [
   <!-- Van hobby naar expertise -->
   <section class="bg-white py-16">
     <div class="container-page grid gap-10 lg:grid-cols-2">
-      <div data-reveal>
-        <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-600">Hoe het begon</p>
-        <h2 class="mt-3 text-2xl font-extrabold text-ink sm:text-3xl">Van hobby naar expertise</h2>
-        <div class="mt-8 space-y-8">
-          {timeline.map((item) => (
-            <div class="flex gap-4">
-              <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-500 text-white">
+      <div>
+        <p class="eyebrow text-brand-600" data-reveal>Hoe het begon</p>
+        <h2 class="mt-3 text-2xl font-bold text-ink sm:text-3xl" data-reveal>Van hobby naar expertise</h2>
+        <div class="relative mt-8 space-y-8">
+          <div class="absolute left-[21px] top-2 bottom-2 w-px bg-brand-100" aria-hidden="true"></div>
+          {timeline.map((item, i) => (
+            <div class="group relative flex gap-4" data-reveal style={`transition-delay:${i * 90}ms`}>
+              <div class="relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-500 text-white shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_0_6px_rgba(44,95,207,0.15)]">
                 <IconMark name={item.icon} class="h-5 w-5 text-white" />
               </div>
               <div>
-                <h3 class="font-bold text-ink">{item.title}</h3>
+                <h3 class="font-bold text-ink transition-colors duration-300 group-hover:text-brand-600">{item.title}</h3>
                 <p class="mt-1 text-sm leading-relaxed text-ink-muted">{item.description}</p>
               </div>
             </div>
@@ -134,10 +134,10 @@ const strengths = [
       </div>
 
       <div class="rounded-[20px] bg-navy-900 p-8 text-white" data-reveal>
-        <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-400">Waar ik voor sta</p>
-        <ul class="mt-6 space-y-4">
+        <p class="eyebrow text-brand-400">Waar ik voor sta</p>
+        <ul class="mt-6 space-y-1">
           {values.map((value) => (
-            <li class="flex items-start gap-2.5 text-sm text-white/80">
+            <li class="flex items-start gap-2.5 rounded-xl px-3 py-2 -mx-3 text-sm text-white/80 transition-colors duration-300 hover:bg-white/5 hover:text-white">
               <IconMark name="check" class="mt-0.5 h-4 w-4 shrink-0 text-brand-400" />
               {value}
             </li>
@@ -152,18 +152,18 @@ const strengths = [
 
   <!-- Sterktes -->
   <section class="bg-surface py-16">
-    <div class="container-page text-center" data-reveal>
-      <p class="text-sm font-bold uppercase tracking-[0.2em] text-brand-600">Waarin ik sterk ben</p>
-      <h2 class="mt-3 text-2xl font-extrabold text-ink sm:text-3xl">
+    <div class="container-page text-center">
+      <p class="eyebrow justify-center text-brand-600" data-reveal>Waarin ik sterk ben</p>
+      <h2 class="mt-3 text-2xl font-bold text-ink sm:text-3xl" data-reveal>
         Alles wat met jouw computer te maken heeft, fix ik.
       </h2>
       <div class="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4 lg:grid-cols-7">
-        {strengths.map((item) => (
-          <div class="flex flex-col items-center gap-3">
-            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-sm">
-              <IconMark name={item.icon} class="h-6 w-6 text-brand-600" />
+        {strengths.map((item, i) => (
+          <div class="group flex flex-col items-center gap-3" data-reveal style={`transition-delay:${i * 60}ms`}>
+            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:bg-gradient-to-br group-hover:from-brand-500 group-hover:to-navy-700 group-hover:shadow-[0_10px_26px_-8px_rgba(44,95,207,0.55)]">
+              <IconMark name={item.icon} class="h-6 w-6 text-brand-600 transition-colors duration-300 group-hover:text-white" />
             </div>
-            <span class="text-xs font-semibold text-ink-muted">{item.label}</span>
+            <span class="text-xs font-semibold text-ink-muted transition-colors duration-300 group-hover:text-ink">{item.label}</span>
           </div>
         ))}
       </div>
@@ -182,8 +182,14 @@ const strengths = [
         <a href="/contact/" class="btn-primary inline-flex items-center gap-2 rounded-md px-5 py-3 text-sm font-semibold">
           Contacteer mij
         </a>
-        <a href="tel:+3247012 3456" class="btn-secondary-dark inline-flex items-center gap-2 rounded-md px-5 py-3 text-sm font-semibold">
-          0470 12 34 56
+        <a
+          href="https://wa.me/32476284847?text=Hallo%20Iris%2C%20ik%20heb%20een%20vraag%20over%20mijn%20computer."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-secondary-dark inline-flex items-center gap-2 rounded-md px-5 py-3 text-sm font-semibold"
+        >
+          <IconMark name="whatsapp" class="h-4 w-4" />
+          WhatsApp
         </a>
       </div>
     </div>

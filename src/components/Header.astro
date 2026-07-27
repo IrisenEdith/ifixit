@@ -26,10 +26,10 @@ const currentPath = Astro.url.pathname;
         class="h-10 w-10 object-contain"
       />
       <span class="flex flex-col leading-none">
-        <span class="text-2xl font-extrabold tracking-tight">
+        <span class="font-display text-2xl font-bold tracking-tight">
           <span class="text-white">ifix</span><span class="text-brand-400">IT</span>
         </span>
-        <span class="text-[10px] font-semibold tracking-[0.25em] text-white/50">I FIX IT</span>
+        <span class="font-mono text-[10px] tracking-[0.25em] text-white/50">I FIX IT</span>
       </span>
     </a>
 
@@ -42,7 +42,7 @@ const currentPath = Astro.url.pathname;
           <a
             href={item.href}
             class:list={[
-              "text-sm font-semibold uppercase tracking-wide transition-colors",
+              "font-mono text-xs uppercase tracking-[0.12em] transition-colors",
               isActive ? "text-brand-400" : "text-white/80 hover:text-white",
             ]}
           >

@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import logoIcon from "../assets/logo-icon.png";
+import IconMark from "./IconMark.astro";
 
 const year = new Date().getFullYear();
 ---
@@ -10,7 +11,7 @@ const year = new Date().getFullYear();
     <div>
       <a href="/" class="flex items-center gap-2">
         <Image src={logoIcon} alt="ifixIT logo" width={72} height={66} loading="lazy" class="h-9 w-9 object-contain" />
-        <span class="text-xl font-extrabold tracking-tight">
+        <span class="font-display text-xl font-bold tracking-tight">
           <span class="text-white">ifix</span><span class="text-brand-400">IT</span>
         </span>
       </a>
@@ -20,7 +21,7 @@ const year = new Date().getFullYear();
     </div>
 
     <div>
-      <h3 class="text-xs font-bold uppercase tracking-widest text-brand-400">Snel naar</h3>
+      <h3 class="font-mono text-xs uppercase tracking-widest text-brand-400">Snel naar</h3>
       <ul class="mt-4 space-y-2.5 text-sm">
         <li><a href="/diensten/" class="hover:text-white">Diensten</a></li>
         <li><a href="/over-mij/" class="hover:text-white">Over mij</a></li>
@@ -31,7 +32,7 @@ const year = new Date().getFullYear();
     </div>
 
     <div>
-      <h3 class="text-xs font-bold uppercase tracking-widest text-brand-400">Diensten</h3>
+      <h3 class="font-mono text-xs uppercase tracking-widest text-brand-400">Diensten</h3>
       <ul class="mt-4 space-y-2.5 text-sm">
         <li><a href="/diensten/#hardware" class="hover:text-white">PC &amp; laptop herstellingen</a></li>
         <li><a href="/diensten/#hardware" class="hover:text-white">Hardware upgrades</a></li>
@@ -42,14 +43,17 @@ const year = new Date().getFullYear();
     </div>
 
     <div>
-      <h3 class="text-xs font-bold uppercase tracking-widest text-brand-400">Contact</h3>
+      <h3 class="font-mono text-xs uppercase tracking-widest text-brand-400">Contact</h3>
       <ul class="mt-4 space-y-3 text-sm">
         <li>
-          <a href="tel:+3247012 3456" class="flex items-center gap-2 hover:text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="h-4 w-4 shrink-0 text-brand-400">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="1.5"/>
-            </svg>
-            0470 12 34 56
+          <a
+            href="https://wa.me/32476284847?text=Hallo%20Iris%2C%20ik%20heb%20een%20vraag%20over%20mijn%20computer."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 hover:text-white"
+          >
+            <IconMark name="whatsapp" class="h-4 w-4 shrink-0 text-brand-400" />
+            WhatsApp
           </a>
         </li>
         <li>
@@ -75,8 +79,9 @@ const year = new Date().getFullYear();
   <div class="border-t border-white/10">
     <div class="container-page flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/50 sm:flex-row">
       <p>&copy; {year} ifixIT &mdash; Alle rechten voorbehouden</p>
-      <div class="flex gap-6">
-        <a href="/algemene-voorwaarden/" class="hover:text-white">Algemene voorwaarden</a>
+      <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+        <a href="/voorwaarden/" class="hover:text-white">Algemene voorwaarden</a>
+        <a href="/algemene-voorwaarden/" class="hover:text-white">Algemene voorwaarden voor herstellingen</a>
         <a href="/privacybeleid/" class="hover:text-white">Privacybeleid</a>
       </div>
     </div>

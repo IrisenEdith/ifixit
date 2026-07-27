@@ -3,7 +3,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import IconMark from "../../components/IconMark.astro";
 
 const contactInfo = [
-  { title: "Telefoon", value: "0470 12 34 56", href: "tel:+3247012 3456", icon: "phone" },
+  {
+    title: "WhatsApp",
+    value: "Stuur een bericht",
+    href: "https://wa.me/32476284847?text=Hallo%20Iris%2C%20ik%20heb%20een%20vraag%20over%20mijn%20computer.",
+    icon: "whatsapp",
+    external: true,
+  },
   { title: "E-mail", value: "iris@irisduym.be", href: "mailto:iris@irisduym.be", icon: "mail" },
   { title: "Locatie", value: "Diepenbeek", href: null, icon: "pin" },
   { title: "Openingsuren", value: "Ma – Vr: 9:00 – 18:00", href: null, icon: "clock" },
@@ -18,7 +24,7 @@ const contactInfo = [
   <!-- Hero -->
   <section class="relative overflow-hidden bg-gradient-to-br from-navy-900 to-navy-600 text-white">
     <div class="container-page py-16 text-center" data-reveal>
-      <h1 class="text-4xl font-extrabold sm:text-5xl">Contact</h1>
+      <h1 class="text-4xl font-bold sm:text-5xl"><span class="text-gradient-accent">Contact</span></h1>
       <p class="mx-auto mt-4 max-w-xl text-white/70">
         Vraag, probleem of gewoon een vrijblijvende diagnose? Ik help je graag verder.
       </p>
@@ -38,7 +44,12 @@ const contactInfo = [
             <div>
               <h2 class="text-xs font-bold uppercase tracking-wide text-ink-muted">{item.title}</h2>
               {item.href ? (
-                <a href={item.href} class="mt-1 block font-semibold text-ink hover:text-brand-600">
+                <a
+                  href={item.href}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noopener noreferrer" : undefined}
+                  class="mt-1 block font-semibold text-ink hover:text-brand-600"
+                >
                   {item.value}
                 </a>
               ) : (

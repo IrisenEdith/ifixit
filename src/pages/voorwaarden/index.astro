@@ -1,0 +1,250 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const sections = [
+  { id: "identiteit-van-de-onderneming", title: "Identiteit van de onderneming" },
+  { id: "toepasselijkheid", title: "Toepasselijkheid" },
+  { id: "diensten", title: "Diensten" },
+  { id: "offertes", title: "Offertes" },
+  { id: "prijzen", title: "Prijzen" },
+  { id: "betaling", title: "Betaling" },
+  { id: "intellectuele-eigendom", title: "Intellectuele eigendom" },
+  { id: "website", title: "Website" },
+  { id: "externe-links", title: "Externe links" },
+  { id: "privacy", title: "Privacy" },
+  { id: "cookies", title: "Cookies" },
+  { id: "overmacht", title: "Overmacht" },
+  { id: "nietigheid", title: "Nietigheid" },
+  { id: "toepasselijk-recht", title: "Toepasselijk recht" },
+];
+---
+
+<BaseLayout
+  title="Algemene voorwaarden — ifixIT"
+  description="Algemene voorwaarden van ifixIT voor het gebruik van de website en de diensten."
+  path="/voorwaarden/"
+>
+  <!-- Hero -->
+  <section class="bg-navy-900 py-14 text-white">
+    <div class="container-page">
+      <h1 class="text-3xl font-bold sm:text-4xl"><span class="text-gradient-accent">Algemene voorwaarden</span></h1>
+      <p class="mt-3 text-sm text-white/50">
+        Versie 1.0 &ndash; Laatst bijgewerkt op <span class="italic">[datum]</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="bg-surface py-16">
+    <div class="container-page max-w-5xl grid gap-12 lg:grid-cols-[220px_1fr] lg:items-start">
+      <!-- TOC -->
+      <nav class="hidden lg:sticky lg:top-28 lg:block" aria-label="Inhoudsopgave">
+        <p class="font-mono text-xs uppercase tracking-widest text-ink-muted">Inhoud</p>
+        <ol class="mt-4 space-y-2.5 text-sm">
+          {sections.map((s, i) => (
+            <li>
+              <a href={`#${s.id}`} class="text-ink-muted transition-colors hover:text-brand-600">
+                Art. {i + 1} &mdash; {s.title}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+
+      <!-- Body -->
+      <div class="max-w-3xl text-ink-muted">
+        <p class="font-display text-lg font-bold text-ink">Algemene Voorwaarden van IFIXIT</p>
+
+        <div class="mt-10 space-y-12">
+          <!-- 1 -->
+          <section id="identiteit-van-de-onderneming" class="scroll-mt-28">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 1 &mdash; Identiteit van de onderneming</h2>
+            <p class="mt-4 leading-relaxed">Deze website en de aangeboden diensten worden uitgebaat door:</p>
+            <div class="mt-4 rounded-[20px] border border-slate-200 bg-white p-5">
+              <p class="font-display font-bold text-ink">IFIXIT</p>
+              <dl class="mt-3 space-y-1.5 text-sm">
+                <div class="flex flex-wrap gap-1.5">
+                  <dt class="text-ink-muted">E-mailadres:</dt>
+                  <dd><a href="mailto:iris@irisduym.be" class="font-semibold text-brand-600 hover:underline">iris@irisduym.be</a></dd>
+                </div>
+                <div class="flex flex-wrap gap-1.5">
+                  <dt class="text-ink-muted">Vestigingsadres:</dt>
+                  <dd class="italic text-ink-muted/70">wordt aangevuld</dd>
+                </div>
+                <div class="flex flex-wrap gap-1.5">
+                  <dt class="text-ink-muted">Ondernemingsnummer:</dt>
+                  <dd class="italic text-ink-muted/70">wordt aangevuld</dd>
+                </div>
+              </dl>
+            </div>
+            <p class="mt-4 leading-relaxed">Hierna genoemd "IFIXIT".</p>
+          </section>
+
+          <!-- 2 -->
+          <section id="toepasselijkheid" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 2 &mdash; Toepasselijkheid</h2>
+            <p class="mt-4 leading-relaxed">
+              Deze algemene voorwaarden zijn van toepassing op elk bezoek aan de website, iedere offerte,
+              overeenkomst en dienstverlening van IFIXIT.
+            </p>
+            <p class="mt-4 leading-relaxed">
+              Afwijkingen zijn uitsluitend geldig indien deze vooraf schriftelijk werden overeengekomen.
+            </p>
+            <p class="mt-4 leading-relaxed">
+              Door gebruik te maken van de website of diensten verklaart de klant kennis te hebben genomen van deze
+              voorwaarden en ermee akkoord te gaan.
+            </p>
+          </section>
+
+          <!-- 3 -->
+          <section id="diensten" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 3 &mdash; Diensten</h2>
+            <p class="mt-4 leading-relaxed">IFIXIT biedt onder meer volgende diensten aan:</p>
+            <ul class="mt-4 space-y-2.5 text-sm">
+              {[
+                "diagnose van computerproblemen",
+                "herstelling van desktops en laptops",
+                "installatie en configuratie van software",
+                "Windows-installaties",
+                "virus- en malwareverwijdering",
+                "hardware-upgrades",
+                "preventief onderhoud",
+                "technisch advies",
+              ].map((item) => (
+                <li class="flex items-start gap-2.5">
+                  <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-500"></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p class="mt-4 leading-relaxed">Het dienstenaanbod kan zonder voorafgaande kennisgeving worden aangepast.</p>
+          </section>
+
+          <!-- 4 -->
+          <section id="offertes" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 4 &mdash; Offertes</h2>
+            <p class="mt-4 leading-relaxed">Alle offertes zijn vrijblijvend.</p>
+            <p class="mt-4 leading-relaxed">Een offerte blijft geldig gedurende 30 dagen, tenzij anders vermeld.</p>
+            <p class="mt-4 leading-relaxed">
+              Wanneer tijdens de uitvoering bijkomende werkzaamheden noodzakelijk blijken, wordt de klant vooraf
+              geïnformeerd.
+            </p>
+          </section>
+
+          <!-- 5 -->
+          <section id="prijzen" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 5 &mdash; Prijzen</h2>
+            <p class="mt-4 leading-relaxed">Alle prijzen worden uitgedrukt in euro (€).</p>
+            <p class="mt-4 leading-relaxed">
+              Indien IFIXIT onder de Belgische vrijstellingsregeling voor kleine ondernemingen valt, wordt geen btw
+              aangerekend overeenkomstig artikel 56bis van het Btw-Wetboek.
+            </p>
+          </section>
+
+          <!-- 6 -->
+          <section id="betaling" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 6 &mdash; Betaling</h2>
+            <p class="mt-4 leading-relaxed">Facturen zijn betaalbaar binnen de op de factuur vermelde betalingstermijn.</p>
+            <p class="mt-4 leading-relaxed">
+              Bij laattijdige betaling kunnen wettelijke nalatigheidsinteresten en invorderingskosten worden
+              aangerekend overeenkomstig de Belgische wetgeving.
+            </p>
+          </section>
+
+          <!-- 7 -->
+          <section id="intellectuele-eigendom" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 7 &mdash; Intellectuele eigendom</h2>
+            <p class="mt-4 leading-relaxed">
+              Alle inhoud van deze website, waaronder teksten, foto's, logo's, illustraties en ontwerpen, blijft
+              eigendom van IFIXIT of van de respectieve rechthebbenden.
+            </p>
+            <p class="mt-4 leading-relaxed">
+              Zonder voorafgaande schriftelijke toestemming mag niets worden gekopieerd, verspreid of commercieel
+              gebruikt.
+            </p>
+          </section>
+
+          <!-- 8 -->
+          <section id="website" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 8 &mdash; Website</h2>
+            <p class="mt-4 leading-relaxed">IFIXIT streeft naar correcte en actuele informatie. Ondanks de grootste zorg kunnen onjuistheden voorkomen.</p>
+            <p class="mt-4 leading-relaxed">
+              IFIXIT kan niet aansprakelijk worden gesteld voor eventuele fouten, tijdelijke onbeschikbaarheid of
+              technische storingen van de website.
+            </p>
+          </section>
+
+          <!-- 9 -->
+          <section id="externe-links" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 9 &mdash; Externe links</h2>
+            <p class="mt-4 leading-relaxed">Onze website kan hyperlinks bevatten naar websites van derden.</p>
+            <p class="mt-4 leading-relaxed">
+              IFIXIT heeft geen controle over de inhoud of het privacybeleid van deze websites en kan hiervoor niet
+              aansprakelijk worden gesteld.
+            </p>
+          </section>
+
+          <!-- 10 -->
+          <section id="privacy" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 10 &mdash; Privacy</h2>
+            <p class="mt-4 leading-relaxed">
+              Persoonsgegevens worden verwerkt overeenkomstig het
+              <a href="/privacybeleid/" class="font-semibold text-brand-600 hover:underline">Privacybeleid</a> van IFIXIT.
+            </p>
+          </section>
+
+          <!-- 11 -->
+          <section id="cookies" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 11 &mdash; Cookies</h2>
+            <p class="mt-4 leading-relaxed">Onze website gebruikt uitsluitend de cookies zoals beschreven in het Cookiebeleid.</p>
+          </section>
+
+          <!-- 12 -->
+          <section id="overmacht" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 12 &mdash; Overmacht</h2>
+            <p class="mt-4 leading-relaxed">
+              IFIXIT is niet aansprakelijk voor vertragingen of het niet uitvoeren van haar verplichtingen ten
+              gevolge van overmacht, waaronder onder meer:
+            </p>
+            <ul class="mt-4 space-y-2.5 text-sm">
+              {[
+                "stroomuitval",
+                "internetstoringen",
+                "brand",
+                "overstromingen",
+                "cyberincidenten",
+                "ziekte",
+                "stakingen",
+                "overheidsmaatregelen",
+              ].map((item) => (
+                <li class="flex items-start gap-2.5">
+                  <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-brand-500"></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <!-- 13 -->
+          <section id="nietigheid" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 13 &mdash; Nietigheid</h2>
+            <p class="mt-4 leading-relaxed">
+              Indien één bepaling van deze voorwaarden ongeldig wordt verklaard, blijven de overige bepalingen
+              volledig van kracht.
+            </p>
+          </section>
+
+          <!-- 14 -->
+          <section id="toepasselijk-recht" class="scroll-mt-28 border-t border-slate-200 pt-10">
+            <h2 class="text-xl font-bold text-ink sm:text-2xl">Artikel 14 &mdash; Toepasselijk recht</h2>
+            <p class="mt-4 leading-relaxed">Op alle overeenkomsten is uitsluitend het Belgische recht van toepassing.</p>
+            <p class="mt-4 leading-relaxed">
+              Geschillen behoren tot de bevoegdheid van de rechtbanken van het gerechtelijk arrondissement waar
+              IFIXIT gevestigd is, tenzij dwingend recht anders bepaalt.
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

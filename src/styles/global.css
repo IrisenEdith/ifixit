@@ -1,28 +1,38 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+@import "@fontsource/instrument-sans/500.css";
+@import "@fontsource/instrument-sans/600.css";
+@import "@fontsource/instrument-sans/700.css";
+@import "@fontsource/manrope/400.css";
+@import "@fontsource/manrope/500.css";
+@import "@fontsource/manrope/700.css";
+@import "@fontsource/ibm-plex-mono/500.css";
 
-  /* Dark sections (softer navy, never near-black) */
-  --color-navy-950: #0e1726; /* footer */
-  --color-navy-900: #162338; /* dark section background */
-  --color-navy-800: #1c3050; /* cards / elements on dark sections */
-  --color-navy-700: #22395e; /* gradient mid-tone */
-  --color-navy-600: #2c4670; /* gradient light-tone / hero gradient end */
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Dark sections — deep premium navy, never near-black/grey */
+  --color-navy-950: #050e1c; /* footer, deepest */
+  --color-navy-900: #0a1b33; /* dark section background */
+  --color-navy-800: #123262; /* cards / elements on dark sections */
+  --color-navy-700: #16335c; /* gradient mid-tone */
+  --color-navy-600: #1b3f78; /* gradient light-tone / hero gradient end */
 
   /* Brand blue */
-  --color-brand-400: #4da3ff; /* accent blue */
-  --color-brand-500: #1976ff; /* primary blue */
-  --color-brand-600: #135fcc; /* deeper blue, for text on light bg / fills */
-  --color-brand-700: #0e4a9e; /* darkest blue, for text on white buttons */
+  --color-brand-400: #5b8def; /* accent blue, bright */
+  --color-brand-500: #2c5fcf; /* primary blue */
+  --color-brand-600: #2450ad; /* deeper blue, for text on light bg / fills */
+  --color-brand-700: #1c3f8f; /* darkest blue, for text on white buttons */
 
   /* Text */
-  --color-ink: #1f2937;
-  --color-ink-muted: #6b7280;
+  --color-ink: #16202f;
+  --color-ink-muted: #5b6675;
 
   /* Light surfaces */
-  --color-surface: #f7f9fc;
-  --color-surface-alt: #f3f7fb;
+  --color-surface: #faf8f4; /* warm white */
+  --color-surface-alt: #eef3fb; /* light blue */
 }
 
 html {
@@ -31,9 +41,13 @@ html {
 }
 
 body {
-  background-color: white;
+  background-color: var(--color-surface);
   color: var(--color-ink);
   font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
 }
 
 .container-page {
@@ -48,31 +62,51 @@ body {
   }
 }
 
+/* Small mono-uppercase section label — the "precision" marker of the type system */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  display: inline-block;
+}
+
 /* Cards: light, airy, soft shadow, gentle lift + blue glow on hover */
 .card {
   background-color: white;
-  border-radius: 20px;
+  border-radius: 22px;
   border: 1px solid #e7ecf3;
-  box-shadow: 0 1px 2px rgba(22, 35, 56, 0.04), 0 8px 24px rgba(22, 35, 56, 0.05);
+  box-shadow: 0 1px 2px rgba(10, 27, 51, 0.04), 0 8px 24px rgba(10, 27, 51, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  border-color: rgba(25, 118, 255, 0.25);
-  box-shadow: 0 12px 32px rgba(25, 118, 255, 0.14), 0 2px 8px rgba(22, 35, 56, 0.06);
+  border-color: rgba(44, 95, 207, 0.25);
+  box-shadow: 0 16px 36px rgba(44, 95, 207, 0.16), 0 2px 8px rgba(10, 27, 51, 0.06);
 }
 
 /* Buttons */
 .btn-primary {
-  background-color: var(--color-brand-500);
+  background: linear-gradient(135deg, var(--color-brand-500), var(--color-navy-700));
   color: white;
-  transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+  box-shadow: 0 10px 26px -8px rgba(44, 95, 207, 0.55);
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
 }
 
 .btn-primary:hover {
-  background-color: var(--color-brand-400);
-  box-shadow: 0 8px 24px rgba(25, 118, 255, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px -8px rgba(44, 95, 207, 0.7);
 }
 
 .btn-secondary-light {
@@ -83,7 +117,7 @@ body {
 }
 
 .btn-secondary-light:hover {
-  background-color: #eaf2ff;
+  background-color: #eaf1fe;
 }
 
 .btn-secondary-dark {
@@ -100,7 +134,7 @@ body {
 /* Photos: soft shadow + subtle blue glow, generous radius */
 .photo-frame {
   border-radius: 24px !important;
-  box-shadow: 0 20px 60px -12px rgba(22, 35, 56, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  box-shadow: 0 20px 60px -12px rgba(10, 27, 51, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.06);
   overflow: hidden;
 }
 
@@ -120,7 +154,7 @@ body {
   content: "";
   position: absolute;
   inset: -10%;
-  background: radial-gradient(circle, rgba(77, 163, 255, 0.35), transparent 70%);
+  background: radial-gradient(circle, rgba(91, 141, 239, 0.35), transparent 70%);
   filter: blur(40px);
   z-index: 0;
 }
@@ -128,6 +162,41 @@ body {
 .photo-glow > * {
   position: relative;
   z-index: 1;
+}
+
+/* Gradient text — reserved for the hero only, so it stays a highlight
+   rather than a repeated trick. Same technique as the NovaDesign
+   reference, kept inside our own blue family instead of grey/indigo/purple. */
+.text-gradient-accent {
+  background: linear-gradient(90deg, #ffffff 0%, #a9c6fb 45%, #5b8def 75%, #2c5fcf 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Diagonal photo panel — the flyer-inspired motif, reused on the hero
+   and the "waarom I FIX IT" section for visual rhyme between them. */
+.diagonal-photo {
+  position: relative;
+  overflow: hidden;
+}
+
+.diagonal-photo img {
+  transition: transform 0.7s ease;
+}
+
+.diagonal-photo:hover img {
+  transform: scale(1.04);
+}
+
+@media (min-width: 1024px) {
+  .diagonal-photo-right {
+    clip-path: polygon(9% 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .diagonal-photo-left {
+    clip-path: polygon(0 0, 100% 0, 91% 100%, 0 100%);
+  }
 }
 
 /* Scroll reveal — safe by default: content stays visible unless JS confirms

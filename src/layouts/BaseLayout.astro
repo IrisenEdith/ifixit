@@ -22,7 +22,6 @@ const localBusinessSchema = {
   alternateName: "I FIX IT",
   description: "PC- en laptopherstellingen, hardware upgrades, software oplossingen en onderhoud in Diepenbeek.",
   image: ogImage.toString(),
-  telephone: "+32470123456",
   email: "iris@irisduym.be",
   address: {
     "@type": "PostalAddress",
@@ -59,13 +58,6 @@ const localBusinessSchema = {
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
 
     <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
   </head>
