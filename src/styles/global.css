@@ -11,18 +11,19 @@
   --color-navy-600: #2c4670; /* gradient light-tone / hero gradient end */
 
   /* Brand blue */
-  --color-brand-400: #4da3ff; /* accent blue */
-  --color-brand-500: #1976ff; /* primary blue */
-  --color-brand-600: #135fcc; /* deeper blue, for text on light bg / fills */
-  --color-brand-700: #0e4a9e; /* darkest blue, for text on white buttons */
+  --color-brand-50: #dbeafe; /* light blue, icon circles / soft fills */
+  --color-brand-400: #3b82f6; /* accent blue */
+  --color-brand-500: #2563eb; /* primary blue */
+  --color-brand-600: #1d4ed8; /* deeper blue, for text on light bg / fills */
+  --color-brand-700: #1e40af; /* darkest blue, for text on white buttons */
 
   /* Text */
   --color-ink: #1f2937;
   --color-ink-muted: #6b7280;
 
   /* Light surfaces */
-  --color-surface: #f7f9fc;
-  --color-surface-alt: #f3f7fb;
+  --color-surface: #f8fafc;
+  --color-surface-alt: #f1f5f9;
 }
 
 html {
@@ -59,8 +60,8 @@ body {
 
 .card:hover {
   transform: translateY(-4px);
-  border-color: rgba(25, 118, 255, 0.25);
-  box-shadow: 0 12px 32px rgba(25, 118, 255, 0.14), 0 2px 8px rgba(22, 35, 56, 0.06);
+  border-color: rgba(37, 99, 235, 0.25);
+  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.14), 0 2px 8px rgba(22, 35, 56, 0.06);
 }
 
 /* Buttons */
@@ -72,7 +73,7 @@ body {
 
 .btn-primary:hover {
   background-color: var(--color-brand-400);
-  box-shadow: 0 8px 24px rgba(25, 118, 255, 0.35);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35);
 }
 
 .btn-secondary-light {
@@ -83,7 +84,7 @@ body {
 }
 
 .btn-secondary-light:hover {
-  background-color: #eaf2ff;
+  background-color: var(--color-brand-50);
 }
 
 .btn-secondary-dark {
@@ -120,7 +121,7 @@ body {
   content: "";
   position: absolute;
   inset: -10%;
-  background: radial-gradient(circle, rgba(77, 163, 255, 0.35), transparent 70%);
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.35), transparent 70%);
   filter: blur(40px);
   z-index: 0;
 }
