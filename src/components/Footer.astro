@@ -82,18 +82,20 @@ const year = new Date().getFullYear();
   </div>
 
   <div class="border-t border-white/10">
-    <div class="container-page flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/50 sm:flex-row">
-      <p>&copy; {year} ifixIT &mdash; Alle rechten voorbehouden</p>
+    <div class="container-page flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/50 sm:flex-row sm:items-start">
+      <div class="text-center sm:text-left">
+        <p>&copy; {year} ifixIT &mdash; Alle rechten voorbehouden</p>
+        {path === "/over-mij/" && (
+          <p class="mt-1 text-white/40">
+            Deze website maakt deel uit van mijn portfolio en dient momenteel uitsluitend als demonstratieproject.
+          </p>
+        )}
+      </div>
       <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
         <a href="/voorwaarden/" class="hover:text-white">Algemene voorwaarden</a>
         <a href="/algemene-voorwaarden/" class="hover:text-white">Algemene voorwaarden voor herstellingen</a>
         <a href="/privacybeleid/" class="hover:text-white">Privacybeleid</a>
       </div>
     </div>
-    {path === "/over-mij/" && (
-      <p class="mt-4 text-center text-xs text-white/40">
-        Deze website maakt deel uit van mijn portfolio en dient momenteel uitsluitend als demonstratieproject.
-      </p>
-    )}
   </div>
 </footer>
