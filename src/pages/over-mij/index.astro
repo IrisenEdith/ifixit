@@ -1,7 +1,9 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PlaceholderImage from "../../components/PlaceholderImage.astro";
 import IconMark from "../../components/IconMark.astro";
+import fotoVanIris from "../../assets/foto-van-iris.png";
 
 const traits = [
   { title: "Persoonlijke aanpak", icon: "user" },
@@ -81,7 +83,15 @@ const strengths = [
   <!-- Wie ben ik -->
   <section class="bg-surface py-16">
     <div class="container-page grid gap-10 lg:grid-cols-2 lg:items-center">
-      <PlaceholderImage label="Foto van Iris" class="photo-frame aspect-4/3 w-full" data-reveal />
+      <Image
+        src={fotoVanIris}
+        alt="Iris, oprichter van ifixIT, in haar werkplaats"
+        width={900}
+        height={600}
+        loading="lazy"
+        class="photo-frame aspect-4/3 w-full object-cover"
+        data-reveal
+      />
       <div data-reveal>
         <p class="eyebrow text-brand-600">Wie ben ik?</p>
         <h2 class="mt-3 text-2xl font-bold text-ink sm:text-3xl">
