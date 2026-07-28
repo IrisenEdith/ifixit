@@ -1,9 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import PlaceholderImage from "../../components/PlaceholderImage.astro";
 import IconMark from "../../components/IconMark.astro";
 import onderdeelCloseUp from "../../assets/onderdeel-close-up.png";
+import laptopVisual from "../../assets/laptop-visual.png";
 
 const trustPoints = [
   { label: "Eerlijk & transparant", icon: "check" },
@@ -218,7 +218,14 @@ const guarantees = [
   <!-- CTA -->
   <section class="bg-navy-900">
     <div class="container-page grid gap-6 py-12 lg:grid-cols-[auto_1fr_auto] lg:items-center">
-      <PlaceholderImage label="Laptop visual" class="photo-frame mx-auto aspect-square w-32 lg:mx-0" dark />
+      <Image
+        src={laptopVisual}
+        alt="Laptop met I FIX IT-logo op het scherm bij ifixIT"
+        width={200}
+        height={200}
+        loading="lazy"
+        class="photo-frame mx-auto aspect-square w-32 object-cover lg:mx-0"
+      />
       <div class="text-center text-white lg:text-left">
         <p class="text-sm font-bold uppercase tracking-wide text-brand-400">Klaar om je computer weer perfect te laten werken?</p>
         <p class="mt-1 text-white/70">Neem vandaag nog contact op voor een vrijblijvende diagnose of vraag.</p>
