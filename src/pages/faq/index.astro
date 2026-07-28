@@ -1,7 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import PlaceholderImage from "../../components/PlaceholderImage.astro";
 import IconMark from "../../components/IconMark.astro";
+import faqVisual from "../../assets/faq.png";
 
 const categories = [
   { id: "algemeen", label: "Algemeen", icon: "laptop" },
@@ -100,7 +101,15 @@ const whyChoose = [
         </p>
       </div>
       <div class="photo-glow" data-reveal>
-        <PlaceholderImage label="Gereedschap close-up" class="photo-frame aspect-4/3 w-full" dark />
+        <Image
+          src={faqVisual}
+          alt="Veelgestelde vragen bij ifixIT"
+          width={900}
+          height={600}
+          loading="eager"
+          fetchpriority="high"
+          class="photo-frame aspect-3/2 w-full object-cover"
+        />
       </div>
     </div>
   </section>
