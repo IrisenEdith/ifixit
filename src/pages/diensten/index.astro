@@ -1,7 +1,9 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PlaceholderImage from "../../components/PlaceholderImage.astro";
 import IconMark from "../../components/IconMark.astro";
+import onderdeelCloseUp from "../../assets/onderdeel-close-up.png";
 
 const trustPoints = [
   { label: "Eerlijk & transparant", icon: "check" },
@@ -141,7 +143,15 @@ const guarantees = [
         </div>
       </div>
       <div class="photo-glow" data-reveal>
-        <PlaceholderImage label="Onderdeel close-up" class="photo-frame aspect-4/3 w-full" dark />
+        <Image
+          src={onderdeelCloseUp}
+          alt="Close-up van een herstelling: onderdelen van een geopende laptop bij ifixIT"
+          width={900}
+          height={600}
+          loading="eager"
+          fetchpriority="high"
+          class="photo-frame aspect-4/3 w-full object-cover"
+        />
       </div>
     </div>
   </section>
