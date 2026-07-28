@@ -4,6 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import PlaceholderImage from "../../components/PlaceholderImage.astro";
 import IconMark from "../../components/IconMark.astro";
 import fotoVanIris from "../../assets/foto-van-iris.png";
+import werkfotoDetail from "../../assets/werkfoto-detail.png";
 
 const traits = [
   { title: "Persoonlijke aanpak", icon: "user" },
@@ -75,7 +76,15 @@ const strengths = [
         </p>
       </div>
       <div class="photo-glow" data-reveal>
-        <PlaceholderImage label="Werkfoto detail" class="photo-frame aspect-4/3 w-full" dark />
+        <Image
+          src={werkfotoDetail}
+          alt="Detail van een geopende desktop tijdens een herstelling bij ifixIT"
+          width={900}
+          height={600}
+          loading="eager"
+          fetchpriority="high"
+          class="photo-frame aspect-4/3 w-full object-cover"
+        />
       </div>
     </div>
   </section>
