@@ -72,7 +72,7 @@ const localBusinessSchema = {
     <main id="main-content">
       <slot />
     </main>
-    <Footer />
+    <Footer path={path} />
     <script>
       const revealTargets = document.querySelectorAll("[data-reveal]");
       if ("IntersectionObserver" in window && revealTargets.length) {

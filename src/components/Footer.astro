@@ -3,6 +3,11 @@ import { Image } from "astro:assets";
 import logoIcon from "../assets/logo-icon.png";
 import IconMark from "./IconMark.astro";
 
+interface Props {
+  path?: string;
+}
+
+const { path = "/" } = Astro.props;
 const year = new Date().getFullYear();
 ---
 
@@ -85,5 +90,10 @@ const year = new Date().getFullYear();
         <a href="/privacybeleid/" class="hover:text-white">Privacybeleid</a>
       </div>
     </div>
+    {path === "/over-mij/" && (
+      <p class="mt-4 text-center text-xs text-white/40">
+        Deze website maakt deel uit van mijn portfolio en dient momenteel uitsluitend als demonstratieproject.
+      </p>
+    )}
   </div>
 </footer>
