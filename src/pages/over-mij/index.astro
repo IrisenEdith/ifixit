@@ -1,10 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import PlaceholderImage from "../../components/PlaceholderImage.astro";
 import IconMark from "../../components/IconMark.astro";
 import fotoVanIris from "../../assets/foto-van-iris.png";
 import werkfotoDetail from "../../assets/werkfoto-detail.png";
+import laptopVisual from "../../assets/laptop-visual.png";
 
 const traits = [
   { title: "Persoonlijke aanpak", icon: "user" },
@@ -192,7 +192,14 @@ const strengths = [
   <!-- CTA -->
   <section class="bg-navy-900">
     <div class="container-page grid gap-6 py-12 lg:grid-cols-[auto_1fr_auto] lg:items-center">
-      <PlaceholderImage label="Gereedschapstas" class="photo-frame mx-auto aspect-square w-32 lg:mx-0" dark />
+      <Image
+        src={laptopVisual}
+        alt="Laptop met I FIX IT-logo op het scherm bij ifixIT"
+        width={200}
+        height={200}
+        loading="lazy"
+        class="photo-frame mx-auto aspect-square w-32 object-cover lg:mx-0"
+      />
       <div class="text-center text-white lg:text-left">
         <p class="text-sm font-bold uppercase tracking-wide text-brand-400">Klaar voor een oplossing?</p>
         <p class="mt-1 text-white/70">Ik help je graag verder! Neem contact op voor een vrijblijvende analyse of vraag.</p>
