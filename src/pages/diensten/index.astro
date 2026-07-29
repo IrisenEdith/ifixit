@@ -4,6 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import IconMark from "../../components/IconMark.astro";
 import onderdeelCloseUp from "../../assets/onderdeel-close-up.png";
 import laptopVisual from "../../assets/laptop-visual.png";
+import afhaalservice from "../../assets/afhaalservice.png";
 
 const trustPoints = [
   { label: "Eerlijk & transparant", icon: "check" },
@@ -102,11 +103,6 @@ const infoBlocks = [
     description: "De vermelde prijzen zijn incl. werkuren, excl. onderdelen. Je krijgt altijd een duidelijke prijsopgave vooraf.",
     icon: "info",
   },
-  {
-    title: "Ophalen & terugbrengen",
-    description: "Binnen een straal van 15 km: € 10. Buiten 15 km: op aanvraag.",
-    icon: "truck",
-  },
 ];
 
 const guarantees = [
@@ -201,7 +197,7 @@ const guarantees = [
         </div>
       </div>
 
-      <div class="mt-10 grid gap-5 sm:grid-cols-2" data-reveal>
+      <div class="mt-10 grid gap-5 lg:grid-cols-[1fr_1.4fr]" data-reveal>
         {infoBlocks.map((block) => (
           <div class="flex items-start gap-4 rounded-2xl bg-brand-50 p-5">
             <IconMark name={block.icon} class="h-6 w-6 shrink-0 text-brand-600" />
@@ -211,6 +207,24 @@ const guarantees = [
             </div>
           </div>
         ))}
+        <div class="relative min-h-[180px] overflow-hidden rounded-2xl">
+          <Image
+            src={afhaalservice}
+            alt="ifixIT ophaal- en leverbestelwagen"
+            width={900}
+            height={500}
+            loading="lazy"
+            class="absolute inset-0 h-full w-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-900/55 to-transparent"></div>
+          <div class="relative flex h-full flex-col justify-center gap-1 p-5">
+            <div class="flex items-center gap-2 text-white">
+              <IconMark name="truck" class="h-6 w-6 shrink-0 text-brand-400" />
+              <h4 class="font-bold">Ophalen &amp; terugbrengen</h4>
+            </div>
+            <p class="max-w-xs text-sm text-white/80">Binnen een straal van 15 km: € 10. Buiten 15 km: op aanvraag.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
